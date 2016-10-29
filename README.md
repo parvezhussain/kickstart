@@ -39,9 +39,9 @@ Date set correctly
 (Error: Could not request certificate: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed: [CRL is not yet valid for /CN=Puppet CA: foreman.company.com])
 
 
-Disable iptables
-Disable SELinux -- Otherwise file browsing through http webserver will not work
- 
+Disable iptables,br>
+Set SELinux to permissive Otherwise file browsing through http webserver will not work
+Edit the file /etc/SELinux/config 
 
 yum install http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm -y
 
