@@ -16,13 +16,11 @@ http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet
 Install centos on the guest VM. Select 'Server Installation" during installation
 ~
 ~
-How to Create a PXE Installation Image for Oracle VM
-https://docs.oracle.com/cd/E20815_01/html/E20821/gkang.html 
  
 ###KICKSTART SERVER 
 https://wiki.centos.org/HowTos/NetworkInstallServer
 
-http://www.golinuxhub.com/2014/08/how-to-configure-pxe-boot-server-in.html
+
 
 
 Download Files For PUPPET--- 
@@ -54,9 +52,7 @@ vi /etc/puppet/puppet.conf
 Add the line:
 
     # Where SSL certificates are kept.
-
     # The default value is '$confdir/ssl'.
-
     ssldir = $vardir/ssl
 
 alt_dns_names = jbccllpupc610,jbccllpupc610.localhost.com
@@ -74,9 +70,7 @@ ps -ef | grep puppet
 ifconfig
 
 yum install telnet -y
-
 puppet cert list
-
 puppet cert sign peclient.localhost.com
 
 cd /etc/puppet
@@ -114,44 +108,24 @@ Puppet cert list --all
 ==========================================
 
 PUPPET EXTRA NOTES
-
-
  
 
   1  yum install openssh-clients
-
     2  vi /etc/yum.repos.d/CentOS-Base.repo
-
     3  yum install openssh-clients -y
-
     4  yum install pciutils -y
-
     5  yum install rubygems
-
     6  yum install virt-what
-
     7  yum install augeas-libs
-
     8  cd /tmp/puppetlabs/
-
     9  ls -l
-
-   10  rpm -i ruby-augeas-0.4.1-3.el6.x86_64.rpm
-
+  10  rpm -i ruby-augeas-0.4.1-3.el6.x86_64.rpm
    11  rpm -i rubygem-json-1.5.5-3.el6.x86_64.rpm
-
    12  rpm -i hiera-1.3.4-1.el6.noarch.rpm
-
    13  rpm -i facter-1.7.0-1.el6.x86_64.rpm
-
    14  rpm -i libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm
-
    15  rpm -i ruby-shadow-2.2.0-2.el6.x86_64.rpm
-
    16  rpm -i puppet-3.8.5-1.el6.noarch.rpm
-
-
- 
 
 [root@PXEClient yum.repos.d]# rpm -i puppet-3.8.5-1.el6.noarch.rpm
 
@@ -172,37 +146,25 @@ error: Failed dependencies:
 [root@PXEClient yum.repos.d]# rpm -i facter-1.7.0-1.el6.x86_64.rpm
 
 warning: facter-1.7.0-1.el6.x86_64.rpm: Header V4 RSA/SHA1 Signature, key ID 4bd6ec30: NOKEY
-
 error: Failed dependencies:
         dmidecode is needed by facter-1:1.7.0-1.el6.x86_64
         virt-what is needed by facter-1:1.7.0-1.el6.x86_64
- 
-
 
 [root@PXEClient yum.repos.d]# rpm -i hiera-1.3.4-1.el6.noarch.rpm
-
 warning: hiera-1.3.4-1.el6.noarch.rpm: Header V4 RSA/SHA512 Signature, key ID 4bd6ec30: NOKEY
-
 error: Failed dependencies:
 
         rubygem-json is needed by hiera-1.3.4-1.el6.noarch
 
 [root@PXEClient yum.repos.d]#
 
- 
-
 [root@PXEClient yum.repos.d]# rpm -i rubygem-json-1.5.5-3.el6.x86_64.rpm
-
 warning: rubygem-json-1.5.5-3.el6.x86_64.rpm: Header V4 RSA/SHA512 Signature, key ID 4bd6ec30: NOKEY
 
 error: Failed dependencies:
-
-        rubygems >= 1.3.7 is needed by rubygem-json-1.5.5-3.el6.x86_64
-
- 
+       rubygems >= 1.3.7 is needed by rubygem-json-1.5.5-3.el6.x86_64
 
 [root@PXEClient yum.repos.d]# rpm -i rubygems-1.3.7-5.el6.noarch.rpm
-
 error: Failed dependencies:
 
         ruby-rdoc is needed by rubygems-1.3.7-5.el6.noarch
@@ -334,8 +296,10 @@ rpm -i libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm
 rpm -i ruby-shadow-2.2.0-2.el6.x86_64.rpm
 
  
+How to Create a PXE Installation Image for Oracle VM
+https://docs.oracle.com/cd/E20815_01/html/E20821/gkang.html
 
- 
+http://www.golinuxhub.com/2014/08/how-to-configure-pxe-boot-server-in.html
 
    17  puppet
 
