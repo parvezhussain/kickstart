@@ -1,5 +1,15 @@
 # kickstart
 Kickstart and other files
+
+
+
+How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest
+http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+
+
+
+
+
 ~
 ~
 How to Create a PXE Installation Image for Oracle VM
