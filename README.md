@@ -1,14 +1,15 @@
 # kickstart
 Kickstart and other files
 
+Download the ISO centos file on to your windows laptop
+http://isoredirect.centos.org/centos/6.8/isos/x86_64/
 
+Download and install Oracle VirtualBox on to your Laptop
 
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest
+*** Make sure to enable the 3rd network adaptor as 'Internal Network'****
+
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
-
-
-
-
 
 ~
 ~
