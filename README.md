@@ -24,6 +24,7 @@ onboot=yes
 
 edit ifcfg-eth2
 IPADDR=192.168.1.1
+dhcp=static
 
 service network restart
 
@@ -33,6 +34,12 @@ Verify the network settings:
 
 Plumb the IPaddress of ifcfg-eth0 to the file
 
+yum -y install httpd tftp-server dhcpd
+yum install git
+yum install -y bind-utils
+yum install dhcp
+yum install elinks
+yum install -y mlocate
 
 ~
 ~
