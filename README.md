@@ -15,6 +15,8 @@ http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet
 
 Select 1st Network "Host Only Adapter", 2nd Network "NAT", 3rd Network "Internal Network"
 
+Install centos on the guest VM. Select 'Minimal" during installation
+
 Post Linux Install:
 
 edit ifcfg-eth0, ifcfg-eth1, ifcfg-eth2:
@@ -32,7 +34,6 @@ Verify the network settings:
 Plumb the IPaddress of ifcfg-eth0 to the file
 
 
-Install centos on the guest VM. Select 'Minimal" during installation
 ~
 ~
  
