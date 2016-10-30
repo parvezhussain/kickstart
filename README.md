@@ -34,12 +34,10 @@ Verify the network settings:
 
 Plumb the IPaddress of ifcfg-eth0 to the file
 
-yum -y install httpd tftp-server dhcpd
-yum install git
-yum install -y bind-utils
-yum install dhcp
-yum install elinks
-yum install -y mlocate
+yum -y install git mlocate elinks bind-utils 
+
+mkdir /opt/git
+git clone https://parvezhussain@github.com/parvezhussain/kickstart.git /opt/git
 
 ~
 ~
