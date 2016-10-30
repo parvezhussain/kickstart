@@ -13,7 +13,26 @@ How to make virtualbox guest use its host’s internet connection and still have
 
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
 
-Install centos on the guest VM. Select 'Server Installation" during installation
+Select 1st Network "Host Only Adapter", 2nd Network "NAT", 3rd Network "Internal Network"
+
+Post Linux Install:
+
+edit ifcfg-eth0, ifcfg-eth1, ifcfg-eth2:
+onboot=yes
+
+edit ifcfg-eth2
+IPADDR=192.168.1.1
+
+service network restart
+
+ifconfig
+
+Verify the network settings:
+
+Plumb the IPaddress of ifcfg-eth0 to the file
+
+
+Install centos on the guest VM. Select 'Minimal" during installation
 ~
 ~
  
