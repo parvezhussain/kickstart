@@ -1,28 +1,39 @@
 # kickstart
 Kickstart and other files
 
+### WHAT YOU WILL NEED
+
+Oracle virtual box installed
+Centos DVD download
+Read this article to understand Networking on Oracle Virtualbox
+https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/
+
 ### GETTING THE LAPTOP READY
 
-Download and install Oracle VirtualBox on to your Laptop
+Download and install Oracle VirtualBox on to your Laptop https://www.virtualbox.org/
 
 Download the ISO centos file on to your windows laptop
 http://isoredirect.centos.org/centos/6.8/isos/x86_64/
+
+
+### Setup / Install the Kickstart Server
 
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest
 *** Make sure to enable the 3rd network adaptor as 'Internal Network'****
 
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
 
-Select 1st Network "Host Only Adapter", 2nd Network "NAT", 3rd Network "Internal Network"
+Select 1st Network "Internal Network", 2nd Network "Host Only Adapter", 3rd Network "NAT"
 
 Install centos on the guest VM. Select 'Minimal" during installation
+https://www.youtube.com/watch?v=z0_d_06jrWE
 
 Post Linux Install:
 
 edit ifcfg-eth0, ifcfg-eth1, ifcfg-eth2:
 onboot=yes
 
-edit ifcfg-eth2
+edit ifcfg-eth0
 IPADDR=192.168.1.1
 dhcp=static
 
