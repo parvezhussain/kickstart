@@ -166,6 +166,11 @@ $CMD https://yum.puppetlabs.com/el/6/products/x86_64/rubygem-json-1.5.5-3.el6.x8
 $CMD https://yum.puppetlabs.com/el/6/products/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
 
 
+$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-augeas-0.4.1-3.el6.x86_64.rpm<br>
+$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
+$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
+$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm<br>
+
 =======================================================
 PUPPET
 
