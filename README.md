@@ -153,7 +153,15 @@ https://wiki.centos.org/HowTos/NetworkInstallServer
 
 Point your repository to  /var/www/html/centos/6
 
+CMD='wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*"'
 
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/facter-1.7.0-1.el6.x86_64.rpm
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/hiera-1.3.4-1.el6.noarch.rpm               
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm  
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/puppet-3.8.5-1.el6.noarch.rpm              
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/ruby-augeas-0.4.1-3.el6.x86_64.rpm
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/rubygem-json-1.5.5-3.el6.x86_64.rpm
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm
 
 Download Files For PUPPET--- <br>
 wget -r -nH -nc --cut-dirs=2 --no-parent --reject="index.html*" https://yum.puppetlabs.com/el/6/
