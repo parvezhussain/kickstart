@@ -83,11 +83,11 @@ Login to the pxeserver through the console
 
 Post Linux Install:
 
-edit ifcfg-eth0, ifcfg-eth1, ifcfg-eth2:
+edit ifcfg-eth0, ifcfg-eth1, ifcfg-eth2:<br>
 onboot=yes
 
-edit ifcfg-eth0
-IPADDR=192.168.1.1
+edit ifcfg-eth0<br>
+IPADDR=192.168.1.1<br>
 dhcp=static
 
 service network restart
@@ -98,6 +98,7 @@ Verify the network settings: and notice the IP address of eth1 (host-only adapte
 
 Now open putty connect to pxeserver using 192.168.56.101<br>
 if you are successful, Congratulation!! you are able to connect to the pxe server (inbound). <br>
+
 Now test the outbound connection. From pxe server, ping www.google.com <br>
 You should see response. Congratulation!! your outbound connection is working. <br>
 
@@ -108,21 +109,50 @@ yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-uti
 mkdir /opt/git <br>
 git clone https://<your_github_id>@github.com/parvezhussain/kickstart.git /opt/git
 
-~
-~
-mkdir /var/www/html/centos
-wget -r -nH -nc --cut-dirs=2 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
+Disable iptables<br>
+Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
+Edit the file /etc/SELinux/config<br>
+SELinux=permissive
+
+mkdir -p /var/www/html/centos/6.8<br>
+cd /var/www/html/centos<br>
+ln -s 6.8 6
+cd /var/www/html/centos/6.8<br>
+
+wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
+
+Under /var/www/html/centos/6.8, you should see the same files as http://mirror.centos.org/centos/6.8/os/x86_64/
+ 
+Start httpd<br>
+service httpd start  (ignore any error) <br>
+ps -ef | grep httpd<br>
+make sure httpd start on boot<br>
+chkconfig httpd on<br>
+chkconfig | grep httpd
+
+
+From your laptop browser check http://<eth1 IPaddress of pxeserver> <br>
+You should see the Apache page. This means the apache is working.
+
+http://<eth1 IPaddress of pxeserver>/centos/6<br>
+You should see all the files and folders like http://mirror.centos.org/centos/6.8/os/x86_64/<br>
+Make sure you are able to browse the FILES ALSO.<br>
+
+CONGRATULATION!! your web file server is working.<br>
+This is one part of PXE boot<br>
+
 
 
  
 ###KICKSTART SERVER 
 
-Disable iptables<br>
-Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
-Edit the file /etc/SELinux/config 
+
 
 Configure PXE server <br>
 https://wiki.centos.org/HowTos/NetworkInstallServer
+
+Point your repository to  /var/www/html/centos/6
+
 
 
 Download Files For PUPPET--- <br>
