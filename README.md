@@ -103,10 +103,10 @@ You should see response. Congratulation!! your outbound connection is working. <
 
 ### Configure the Kickstart Server
 
-yum -y install git mlocate elinks bind-utils 
+yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet
 
 mkdir /opt/git <br>
-git clone https://parvezhussain@github.com/parvezhussain/kickstart.git /opt/git
+git clone https://<your_github_id>@github.com/parvezhussain/kickstart.git /opt/git
 
 ~
 ~
