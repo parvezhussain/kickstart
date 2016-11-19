@@ -30,6 +30,10 @@ Make sure all the above software are installed
 Install centos on the guest VM. Select 'Minimal" during installation <br>
 https://www.youtube.com/watch?v=z0_d_06jrWE
 
+Open Oracle VirtualBox and setup the network as per the instructions provided below. (IMPORTANT) <br>
+How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest<br>
+http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+
 
 1. Ceate a guest VM as pxeserver <br>
 Open Oracle VirtualBox(VB). Select 'New'<br>
@@ -71,6 +75,9 @@ Server type: minimal
 The pxeserver vm will automatically reboot.
 
 ### Setting up the network for the guest VM
+
+
+
 
 Login to the pxeserver through the console
 
