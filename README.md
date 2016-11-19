@@ -110,6 +110,10 @@ git clone https://<your_github_id>@github.com/parvezhussain/kickstart.git /opt/g
 
 ~
 ~
+mkdir /var/www/html/centos
+wget -r -nH -nc --cut-dirs=2 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
+
+
  
 ###KICKSTART SERVER 
 
