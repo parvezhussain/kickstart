@@ -1,6 +1,7 @@
 # kickstart
 Kickstart and other files
 
+### GETTING THE LAPTOP READY
 ### WHAT YOU WILL NEED ON YOUR LAPTOP (also called the HOST MACHINE)
 
 Oracle virtual box <br>
@@ -23,9 +24,14 @@ How to make virtualbox guest use its host’s internet connection and still have
 
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
 
-### GETTING THE LAPTOP READY
+
+### Create and Install the Kickstart Server
 
 Make sure all the above software are installed
+
+Install centos on the guest VM. Select 'Minimal" during installation <br>
+https://www.youtube.com/watch?v=z0_d_06jrWE
+
 
 1. Ceate a guest VM as pxeserver <br>
 Open Oracle VirtualBox(VB). Select 'New'<br>
@@ -60,21 +66,15 @@ You will be on the Home screen of VirtualBox
 
 from Navigation Panel, select 'pxeserver' and click 'Start'<br>
 Centos will start installation.<br>
-
+Except the below settings, select all default <br>
 hostname:    pxeserver.localhost.com<br>
 Server type: minimal
 
+The pxeserver vm will automatically reboot.
 
+### Setting up the network for the guest VM
 
-
-### Setup / Install the Kickstart Server
-
-
-
-Select 1st Network "Internal Network", 2nd Network "Host Only Adapter", 3rd Network "NAT"
-
-Install centos on the guest VM. Select 'Minimal" during installation
-https://www.youtube.com/watch?v=z0_d_06jrWE
+Login to the pxeserver through the console
 
 Post Linux Install:
 
@@ -89,13 +89,18 @@ service network restart
 
 ifconfig
 
-Verify the network settings:
+Verify the network settings: and notice the IP address of eth1 (host-only adapter) ex:192.168.56.101
 
-Plumb the IPaddress of ifcfg-eth0 to the file
+Now open putty connect to pxeserver using 192.168.56.101<br>
+if you are successful, Congratulation!! you are able to connect to the pxe server (inbound). <br>
+Now test the outbound connection. From pxe server, ping www.google.com <br>
+You should see response. Congratulation!! your outbound connection is working. <br>
+
+### Configure the Kickstart Server
 
 yum -y install git mlocate elinks bind-utils 
 
-mkdir /opt/git
+mkdir /opt/git <br>
 git clone https://parvezhussain@github.com/parvezhussain/kickstart.git /opt/git
 
 ~
