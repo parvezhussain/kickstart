@@ -20,8 +20,6 @@ Read this article to understand Networking on Oracle Virtualbox<br>
 https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/
 
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest
-*** Make sure to enable the 3rd network adaptor as 'Internal Network'****
-
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
 
 
@@ -109,14 +107,14 @@ git clone https://parvezhussain@github.com/parvezhussain/kickstart.git /opt/git
 ###KICKSTART SERVER 
 
 Disable iptables<br>
-Set SELinux to permissive Otherwise file browsing through http webserver will not work
+Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
 Edit the file /etc/SELinux/config 
 
-Configure PXE server
+Configure PXE server <br>
 https://wiki.centos.org/HowTos/NetworkInstallServer
 
 
-Download Files For PUPPET--- 
+Download Files For PUPPET--- <br>
 wget -r -nH -nc --cut-dirs=2 --no-parent --reject="index.html*" https://yum.puppetlabs.com/el/6/
 
 
@@ -200,23 +198,22 @@ Puppet cert list --all
 
 PUPPET EXTRA NOTES
  
-
-  1  yum install openssh-clients
-    2  vi /etc/yum.repos.d/CentOS-Base.repo
-    3  yum install openssh-clients -y
-    4  yum install pciutils -y
-    5  yum install rubygems
-    6  yum install virt-what
-    7  yum install augeas-libs
-    8  cd /tmp/puppetlabs/
-    9  ls -l
-  10  rpm -i ruby-augeas-0.4.1-3.el6.x86_64.rpm
-   11  rpm -i rubygem-json-1.5.5-3.el6.x86_64.rpm
-   12  rpm -i hiera-1.3.4-1.el6.noarch.rpm
-   13  rpm -i facter-1.7.0-1.el6.x86_64.rpm
-   14  rpm -i libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm
-   15  rpm -i ruby-shadow-2.2.0-2.el6.x86_64.rpm
-   16  rpm -i puppet-3.8.5-1.el6.noarch.rpm
+1.  yum install openssh-clients
+2.  vi /etc/yum.repos.d/CentOS-Base.repo
+3.  yum install openssh-clients -y
+4.  yum install pciutils -y
+5.  yum install rubygems
+6.  yum install virt-what
+7.  yum install augeas-libs
+8.  cd /tmp/puppetlabs/
+9.  ls -l
+10.  rpm -i ruby-augeas-0.4.1-3.el6.x86_64.rpm
+11.  rpm -i rubygem-json-1.5.5-3.el6.x86_64.rpm
+12.  rpm -i hiera-1.3.4-1.el6.noarch.rpm
+13.  rpm -i facter-1.7.0-1.el6.x86_64.rpm
+14.  rpm -i libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm
+15.  rpm -i ruby-shadow-2.2.0-2.el6.x86_64.rpm
+16.  rpm -i puppet-3.8.5-1.el6.noarch.rpm
 
 [root@PXEClient yum.repos.d]# rpm -i puppet-3.8.5-1.el6.noarch.rpm
 
