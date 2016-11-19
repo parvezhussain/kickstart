@@ -27,42 +27,41 @@ http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet
 
 Make sure all the above software are installed
 
-1. Ceate a guest VM as pxeserver
-Open Oracle VirtualBox(VB). Select 'New'
-Name:pxeserver
-Type:Linux
-Version: Redhat (64-bit)
-
-Memory Size: 1024MB
-
-Click 'Create'
-
-File Location: pxeserver
-File size: 20GB
+1. Ceate a guest VM as pxeserver <br>
+Open Oracle VirtualBox(VB). Select 'New'<br>
+Name:pxeserver<br>
+Type:Linux<br>
+Version: Redhat (64-bit)<br>
+Memory Size: 1024MB<br>
 
 Click 'Create'
 
-A new guest VM is created with name 'pxeserver'
-Select the the guest VM 'pxeserver'. Select 'Settings'
-Select 'Network' from navigation panel.
-Adaptor 1
-'Enable Network Adapter' checked box. Attached to: Internal Network
-Adaptor 2
-'Enable Network Adapter' checked box. Attached to: Host-Only Adapter
-Adaptor 3
-'Enable Network Adapter' checked box. Attached to: NAT
+File Location: pxeserver<br>
+File size: 20GB<br>
 
-Select 'Storage' from Navigation Panel
-(From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty
-(From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso
+Click 'Create'
+
+A new guest VM is created with name 'pxeserver'<br>
+Select the the guest VM 'pxeserver'. Select 'Settings'<br>
+Select 'Network' from navigation panel.<br>
+Adaptor 1<br>
+'Enable Network Adapter' checked box. Attached to: Internal Network<br>
+Adaptor 2<br>
+'Enable Network Adapter' checked box. Attached to: Host-Only Adapter<br>
+Adaptor 3<br>
+'Enable Network Adapter' checked box. Attached to: NAT<br>
+
+Select 'Storage' from Navigation Panel<br>
+(From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty<br>
+(From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso<br>
 Click OK
 
 You will be on the Home screen of VirtualBox
 
-from Navigation Panel, select 'pxeserver' and click 'Start'
-Centos will start installation.
+from Navigation Panel, select 'pxeserver' and click 'Start'<br>
+Centos will start installation.<br>
 
-hostname:    pxeserver.localhost.com
+hostname:    pxeserver.localhost.com<br>
 Server type: minimal
 
 
