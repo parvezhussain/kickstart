@@ -1,11 +1,15 @@
 # kickstart
 Kickstart and other files
 
-### WHAT YOU WILL NEED
+### WHAT YOU WILL NEED ON YOUR LAPTOP (also called the HOST MACHINE)
 
-Oracle virtual box installed
-Centos DVD download
-Read this article to understand Networking on Oracle Virtualbox
+Oracle virtual box <br>
+https://www.virtualbox.org/ <br>
+Centos DVD download<br>
+http://isoredirect.centos.org/centos/6.8/isos/x86_64/ <br>
+Putty<br>
+Winscp <br>
+Read this article to understand Networking on Oracle Virtualbox<br>
 https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/
 
 ### GETTING THE LAPTOP READY
