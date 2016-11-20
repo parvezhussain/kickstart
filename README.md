@@ -6,6 +6,8 @@ Kickstart and other files
 
 Oracle virtual box <br>
 https://www.virtualbox.org/ <br>
+Oracle VirtualBbox Extension Pack (required for Network Install)<br>
+https://www.virtualbox.org/wiki/Downloads<br>
 Centos DVD download - CentOS-6.8-x86_64-bin-DVD1.iso <br>
 http://isoredirect.centos.org/centos/6.8/isos/x86_64/ <br>
 Putty<br>
@@ -27,12 +29,10 @@ http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet
 
 Make sure all the above software are installed
 
+====== Reference Video ============
 Install centos on the guest VM. Select 'Minimal" during installation <br>
 https://www.youtube.com/watch?v=z0_d_06jrWE
-
-Open Oracle VirtualBox and setup the network as per the instructions provided below. (IMPORTANT) <br>
-How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest<br>
-http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+================================================
 
 
 ### Create a Guest VM
@@ -50,6 +50,13 @@ File Location: pxeserver<br>
 File size: 20GB  (depends on usage 8 GB to 30 GB)<br>
 
 Click 'Create'
+
+
+========== Reference Article ==============
+Open Oracle VirtualBox and setup the network as per the instructions provided below. (IMPORTANT) <br>
+How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest<br>
+http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+========================================
 
 #### USE Option 1 or option 2
 ### OPTION 1: HOWTO Configure Guest VM to conect to Internet and Internal network
@@ -87,7 +94,7 @@ Click OK
 
 ### Install OS from local DVD
 - Create the VM
-- Use OPTION 1 0r 2 for Network configuration
+- From network Configuration Use OPTION 1 or 2
 - use OPTION A to boot/install from local DVD
 
 From Navigation Panel, select 'pxeserver' and click 'Start'<br>
@@ -134,7 +141,7 @@ You should see response. Congratulation!! your outbound connection is working. <
 yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet wget
 
 mkdir /opt/git <br>
-git clone https://<your_github_id>@github.com/parvezhussain/kickstart.git /opt/git
+git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
 
 Disable iptables<br>
 service iptables stop<br>
@@ -164,7 +171,7 @@ chkconfig | grep httpd
 From your laptop browser check http://<eth1 IPaddress of pxeserver> <br>
 You should see the Apache page. This means the apache is working.
 
-http://<eth1 IPaddress of pxeserver>/centos/6<br>
+http://(eth1 IPaddress of pxeserver)/centos/6<br>
 You should see all the files and folders like http://mirror.centos.org/centos/6.8/os/x86_64/<br>
 Make sure you are able to browse the FILES ALSO.<br>
 
@@ -199,7 +206,7 @@ yum install createrepo -y<br>
 cd /var/www/html<br>
 createrepo puppetlabs<br>
 
-   ls -l puppetlabs/repodata
+   ls -l puppetlabs/repodata<br>
    -rw-r--r--. 1 root root  2986 Nov 20 10:08 repomd.xml
 
 
