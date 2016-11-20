@@ -29,9 +29,10 @@ http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet
 
 Make sure all the above software are installed
 
-====== Reference Video ============
+====== Reference Video ============<br>
 Install centos on the guest VM. Select 'Minimal" during installation <br>
-https://www.youtube.com/watch?v=z0_d_06jrWE
+https://www.youtube.com/watch?v=z0_d_06jrWE<br>
+
 ================================================
 
 
@@ -52,10 +53,11 @@ File size: 20GB  (depends on usage 8 GB to 30 GB)<br>
 Click 'Create'
 
 
-========== Reference Article ==============
+========== Reference Article ============== <br>
 Open Oracle VirtualBox and setup the network as per the instructions provided below. (IMPORTANT) <br>
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest<br>
-http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/<br>
+
 ========================================
 
 #### USE Option 1 or option 2
