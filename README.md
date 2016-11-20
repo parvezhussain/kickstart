@@ -131,7 +131,7 @@ Start httpd<br>
 service httpd start  (ignore any error) <br>
 ps -ef | grep httpd
 
-ake sure httpd start on boot<br>
+Make sure httpd start on boot<br>
 chkconfig httpd on<br>
 chkconfig | grep httpd
 
@@ -178,11 +178,12 @@ Point your repository to  /var/www/html/centos/6
 
 cd /var/www/html<br>
 cp -pr /opt/git/ks .<br>
-[root@pxeserver html]# ls -l
-total 12
-drwxr-xr-x. 3 root root 4096 Nov 20 07:36 centos
-drwxr-xr-x. 3 root root 4096 Nov 20 07:34 ks
-drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
+
+    [root@pxeserver html]# ls -l
+    total 12
+    drwxr-xr-x. 3 root root 4096 Nov 20 07:36 centos
+    drwxr-xr-x. 3 root root 4096 Nov 20 07:34 ks
+    drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
 
 ### Configure dhcp server 
 
@@ -233,8 +234,7 @@ Add the line:
     # Where SSL certificates are kept.
     # The default value is '$confdir/ssl'.
     ssldir = $vardir/ssl
-
-alt_dns_names = jbccllpupc610,jbccllpupc610.localhost.com
+    alt_dns_names = jbccllpupc610,jbccllpupc610.localhost.com
 
 /etc/init.d/iptables stop<br>
 chkconfig | grep iptables<br>
