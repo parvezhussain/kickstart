@@ -88,35 +88,39 @@ onboot=yes
 
 edit ifcfg-eth0<br>
 IPADDR=192.168.1.1<br>
-dhcp=static
+bootproto=static
 
 service network restart
 
 ifconfig
 
-Verify the network settings: and notice the IP address of eth1 (host-only adapter) ex:192.168.56.101
+Verify the network settings: <br>
+Note the IP address of eth1 (host-only adapter) ex:192.168.56.101
 
 Now open putty connect to pxeserver using 192.168.56.101<br>
 if you are successful, Congratulation!! you are able to connect to the pxe server (inbound). <br>
 
-Now test the outbound connection. From pxe server, ping www.google.com <br>
+Now test the outbound connection.<br>
+From pxe server, ping www.google.com <br>
 You should see response. Congratulation!! your outbound connection is working. <br>
 
 ### Configure the Kickstart Server
 
-yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet
+yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet wget
 
 mkdir /opt/git <br>
 git clone https://<your_github_id>@github.com/parvezhussain/kickstart.git /opt/git
 
 Disable iptables<br>
+service iptables stop<br>
+chkconfig iptables off<br>
 Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
 Edit the file /etc/selinux/config<br>
 SELINUX=permissive
 
 mkdir -p /var/www/html/centos/6.8<br>
 cd /var/www/html/centos<br>
-ln -s 6.8 6
+ln -s 6.8 6<br>
 cd /var/www/html/centos/6.8<br>
 
 wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
@@ -125,8 +129,9 @@ Under /var/www/html/centos/6.8, you should see the same files as http://mirror.c
  
 Start httpd<br>
 service httpd start  (ignore any error) <br>
-ps -ef | grep httpd<br>
-make sure httpd start on boot<br>
+ps -ef | grep httpd
+
+ake sure httpd start on boot<br>
 chkconfig httpd on<br>
 chkconfig | grep httpd
 
@@ -146,13 +151,6 @@ This is one part of PXE boot<br>
  
 ###KICKSTART SERVER 
 
-
-
-Configure PXE server <br>
-https://wiki.centos.org/HowTos/NetworkInstallServer
-
-Point your repository to  /var/www/html/centos/6
-
 Download Files For PUPPET Client yum repo--- <br>
 
 mkdir /var/www/html/puppetlabs<br>
@@ -161,18 +159,21 @@ cd /var/www/html/puppetlabs
 CMD='wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*"'
 
 $CMD https://yum.puppetlabs.com/el/6/products/x86_64/facter-1.7.0-1.el6.x86_64.rpm<br>
-$CMD https://yum.puppetlabs.com/el/6/products/x86_64/hiera-1.3.4-1.el6.noarch.rpm<br>               
-$CMD https://yum.puppetlabs.com/el/6/products/x86_64/libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm<br>  Present in centos 6.8
-$CMD https://yum.puppetlabs.com/el/6/products/x86_64/puppet-3.8.5-1.el6.noarch.rpm<br>              
-$CMD https://yum.puppetlabs.com/el/6/products/x86_64/ruby-augeas-0.4.1-3.el6.x86_64.rpm<br>
-$CMD https://yum.puppetlabs.com/el/6/products/x86_64/rubygem-json-1.5.5-3.el6.x86_64.rpm<br>
-$CMD https://yum.puppetlabs.com/el/6/products/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/hiera-1.3.4-1.el6.noarch.rpm<br>
 
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm<br>  Present in centos 6.8
+
+CMD='wget -r -nH -nc --cut-dirs=7 --no-parent --reject="index.html*"'
 
 $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-augeas-0.4.1-3.el6.x86_64.rpm<br>
 $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
-$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
-$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm<br>
+$CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/rubygem-json-1.5.5-3.el6.x86_64.rpm<br>
+
+Configure PXE server <br>
+https://wiki.centos.org/HowTos/NetworkInstallServer
+
+Point your repository to  /var/www/html/centos/6
+
 
 =======================================================
 #### PUPPET-SERVER Install
