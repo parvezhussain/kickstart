@@ -35,6 +35,8 @@ How to make virtualbox guest use its host’s internet connection and still have
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
 
 
+### Create a Guest VM
+
 1. Ceate a guest VM as pxeserver <br>
 Open Oracle VirtualBox(VB). Select 'New'<br>
 Name:pxeserver<br>
@@ -45,11 +47,12 @@ Memory Size: 1024MB<br>
 Click 'Create'
 
 File Location: pxeserver<br>
-File size: 20GB<br>
+File size: 20GB  (depends on usage 8 GB to 30 GB)<br>
 
 Click 'Create'
 
-A new guest VM is created with name 'pxeserver'<br>
+#### USE Option 1 or option 2
+### OPTION 1: HOWTO Configure Guest VM to conect to Internet and Internal network
 Select the the guest VM 'pxeserver'. Select 'Settings'<br>
 Select 'Network' from navigation panel.<br>
 Adaptor 1<br>
@@ -58,15 +61,36 @@ Adaptor 2<br>
 'Enable Network Adapter' checked box. Attached to: Host-Only Adapter<br>
 Adaptor 3<br>
 'Enable Network Adapter' checked box. Attached to: NAT<br>
+Click 'OK'
 
+### OPTION 2: HOWTO Configure Guest VM to conect to Internal Network ONLY
+Select the the guest VM 'pxeserver'. Select 'Settings'<br>
+Select 'Network' from navigation panel.<br>
+Adaptor 1<br>
+'Enable Network Adapter' checked box. Attached to: Internal Network<br>
+Click 'OK'
+
+#### Use OPTION A or Option B
+### OPTION A: HOWTO Configure VM to boot/install from local DVD
+Select the VM from Navigation Panel. Click 'Settings'
+Select 'System' from Navigation Panel<br>
+Under Motherboard, checkbox Network and move it to the top of the list<br>
+Click OK
+
+### OPTION A: HOWTO Configure VM to boot/install from kickstart server
+Select the VM from Navigation Panel. Click 'Settings'
 Select 'Storage' from Navigation Panel<br>
 (From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty<br>
 (From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso<br>
 Click OK
 
-You will be on the Home screen of VirtualBox
 
-from Navigation Panel, select 'pxeserver' and click 'Start'<br>
+### Install OS from local DVD
+- Create the VM
+- Use OPTION 1 0r 2 for Network configuration
+- use OPTION A to boot/install from local DVD
+
+From Navigation Panel, select 'pxeserver' and click 'Start'<br>
 Centos will start installation.<br>
 Except the below settings, select all default <br>
 hostname:    pxeserver.localhost.com<br>
@@ -74,21 +98,22 @@ Server type: minimal
 
 The pxeserver vm will automatically reboot.
 
-### Setting up the network for the guest VM
 
+### POST INSTALL Network Config
 
-
-
-Login to the pxeserver through the console
+Login to the VM through the console
 
 Post Linux Install:
 
-edit ifcfg-eth0, ifcfg-eth1, ifcfg-eth2:<br>
+If the VM has eth1 and eth2 <br>
+Edit ifcfg-eth1, ifcfg-eth2:<br>
 onboot=yes
+
 
 edit ifcfg-eth0<br>
 IPADDR=192.168.1.1<br>
-bootproto=static
+bootproto=static<br>
+onboot=yes
 
 service network restart
 
@@ -201,10 +226,11 @@ cp /usr/share/syslinux/menu.c32 .<br>
 mkdir -p pxelinux.cfg centos/6.8<br>
 cp -p /opt/git/tftpboot/pxelinux.cfg/default /var/lib/tftpboot/pxelinux.cfg/<br>
 cp -p /var/www/html/centos/6/images/pxeboot/* /var/lib/tftpboot/centos/6.8/<br>
-ls -l /var/lib/tftpboot/centos/6.8/
-total 43904
--rw-r--r--. 1 root root 40688737 May 22 01:06 initrd.img
--rw-r--r--. 1 root root  4264528 May 22 01:06 vmlinuz
+
+    ls -l /var/lib/tftpboot/centos/6.8/
+    total 43904
+    -rw-r--r--. 1 root root 40688737 May 22 01:06 initrd.img
+    -rw-r--r--. 1 root root  4264528 May 22 01:06 vmlinuz
 
 Edit /var/lib/tftpboot/pxelinux.cfg/default <br>
 Make sure all the paths are correct and accessible.<br>
@@ -213,14 +239,10 @@ service iptables save<br>
 chkconfig tftp on<br>
 service xinetd restart<br>
 
-
-
-
-
-
-
-
 =======================================================
+
+#### Create a Puppet Server
+
 #### PUPPET-SERVER Install
 
 yum install http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm -y
