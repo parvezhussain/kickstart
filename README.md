@@ -111,8 +111,8 @@ git clone https://<your_github_id>@github.com/parvezhussain/kickstart.git /opt/g
 
 Disable iptables<br>
 Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
-Edit the file /etc/SELinux/config<br>
-SELinux=permissive
+Edit the file /etc/selinux/config<br>
+SELINUX=permissive
 
 mkdir -p /var/www/html/centos/6.8<br>
 cd /var/www/html/centos<br>
@@ -155,6 +155,9 @@ Point your repository to  /var/www/html/centos/6
 
 Download Files For PUPPET Client yum repo--- <br>
 
+mkdir /var/www/html/puppetlabs<br>
+cd /var/www/html/puppetlabs
+
 CMD='wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*"'
 
 $CMD https://yum.puppetlabs.com/el/6/products/x86_64/facter-1.7.0-1.el6.x86_64.rpm<br>
@@ -172,18 +175,7 @@ $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-
 $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/libselinux-ruby-2.0.94-5.8.el6.x86_64.rpm<br>
 
 =======================================================
-PUPPET
-
-Installation Process:
-
-Ping server and client so that they talk to each other
-
-Date set correctly 
-
-(Error: Could not request certificate: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed: [CRL is not yet valid for /CN=Puppet CA: foreman.company.com])
-
-
-
+#### PUPPET-SERVER Install
 
 yum install http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm -y
 
@@ -199,15 +191,20 @@ Add the line:
 
 alt_dns_names = jbccllpupc610,jbccllpupc610.localhost.com
 
-/etc/init.d/iptables stop
-
-chkconfig | grep iptables
-chkconfig iptables off
-chkconfig | grep iptables
+/etc/init.d/iptables stop<br>
+chkconfig | grep iptables<br>
+chkconfig iptables off<br>
+chkconfig | grep iptables<br>
 
 service puppetmaster start
 
-ps -ef | grep puppet
+ps -ef | grep puppet<br>
+
+chkconfig | grep puppetmaster<br>
+chkconfig puppetmaster on<br>
+chkconfig | grep puppetmaster<br>
+
+
 
 ifconfig
 
@@ -220,6 +217,16 @@ cd /etc/puppet
 ps -ef | grep puppet
 
 puppet agent -tv
+
+
+Installation Process:
+
+Ping server and client so that they talk to each other
+
+Date set correctly 
+
+(Error: Could not request certificate: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed: [CRL is not yet valid for /CN=Puppet CA: foreman.company.com])
+
 
 
 yum -y install http://yum.theforeman.org/releases/latest/el6/x86_64/foreman-release-1.10.0-1.el6.noarch.rpm
