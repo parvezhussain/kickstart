@@ -174,6 +174,50 @@ https://wiki.centos.org/HowTos/NetworkInstallServer
 
 Point your repository to  /var/www/html/centos/6
 
+### Copy kickstart files and config
+
+cd /var/www/html<br>
+cp -pr /opt/git/ks .<br>
+[root@pxeserver html]# ls -l
+total 12
+drwxr-xr-x. 3 root root 4096 Nov 20 07:36 centos
+drwxr-xr-x. 3 root root 4096 Nov 20 07:34 ks
+drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
+
+### Configure dhcp server 
+
+cd /etc/dhcp<br>
+mv dhcpd.conf dhcpd.conf_orig<br>
+cp -p /opt/git/dhcp/dhcpd.conf .<br>
+service dhcpd restart<br>
+chkconfig dhcpd on<br>
+chkconfig | grep dhcpd<br>
+
+### Configure tftp server<br>
+cd /var/lib/tftpboot<br>
+cp /usr/share/syslinux/pxelinux.0 .<br>
+cp /usr/share/syslinux/menu.c32 .<br>
+mkdir -p pxelinux.cfg centos/6.8<br>
+cp -p /opt/git/tftpboot/pxelinux.cfg/default /var/lib/tftpboot/pxelinux.cfg/<br>
+cp -p /var/www/html/centos/6/images/pxeboot/* /var/lib/tftpboot/centos/6.8/<br>
+ls -l /var/lib/tftpboot/centos/6.8/
+total 43904
+-rw-r--r--. 1 root root 40688737 May 22 01:06 initrd.img
+-rw-r--r--. 1 root root  4264528 May 22 01:06 vmlinuz
+
+Edit /var/lib/tftpboot/pxelinux.cfg/default <br>
+Make sure all the paths are correct and accessible.<br>
+
+service iptables save<br>
+chkconfig tftp on<br>
+service xinetd restart<br>
+
+
+
+
+
+
+
 
 =======================================================
 #### PUPPET-SERVER Install
