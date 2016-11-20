@@ -82,20 +82,51 @@ Click 'OK'
 #### Use OPTION A or Option B
 ### OPTION A: HOWTO Configure VM to boot/install from local DVD
 Select the VM from Navigation Panel. Click 'Settings'
-Select 'System' from Navigation Panel<br>
-Under Motherboard, checkbox Network and move it to the top of the list<br>
-Click OK
-
-### OPTION A: HOWTO Configure VM to boot/install from kickstart server
-Select the VM from Navigation Panel. Click 'Settings'
 Select 'Storage' from Navigation Panel<br>
 (From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty<br>
 (From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso<br>
+Click OK<br>
+Click 'Start' to start the VM.
+
+
+### OPTION A: HOWTO Configure VM to boot/install from kickstart server
+Make sure the Kickstart server is working fine<br>
+Select the VM from Navigation Panel. Click 'Settings'<br>
+Select 'System' from Navigation Panel<br>
+Under Motherboard, checkbox Network and move it to the top of the list<br>
+Select 'Network'. Under 'Adapter1 Setting' expand 'Advanced'. Note the MAC address.<br>
 Click OK
+
+Login to Kickstart server.<br>
+Edit /etc/dhcp/dhcpd.conf <br>
+Add the Lines:<br>
+ host PXEClient1 {
+    hardware ethernet 08:00:27:C1:B6:01;
+    fixed-address 192.168.1.6;
+    filename "pxelinux.0";
+    option host-name "peserver.localhost.com";
+ }
+
 
 ========================================
 
 ### Install OS from local DVD
+- Create the VM
+- From network Configuration Use OPTION 1 or 2
+- use OPTION A to boot/install from local DVD
+
+From Navigation Panel, select 'pxeserver' and click 'Start'<br>
+Centos will start installation.<br>
+Except the below settings, select all default <br>
+hostname:    pxeserver.localhost.com<br>
+Server type: minimal
+
+The pxeserver vm will automatically reboot.
+
+
+========================================
+
+### Install OS from Kickstart Server (Network Install)
 - Create the VM
 - From network Configuration Use OPTION 1 or 2
 - use OPTION A to boot/install from local DVD
@@ -140,10 +171,15 @@ Now test the outbound connection.<br>
 From pxe server, ping www.google.com <br>
 You should see response. Congratulation!! your outbound connection is working. <br>
 
-========================================
+=======================================
 
+### KICKSTART SERVER
 
-### Configure the Kickstart Server
+SERVERNAME = pxeserver.localhost.com
+
+# Follow Steps:
+- Install OS from local DVD
+- POST INSTALL Network Config
 
 yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet wget
 
@@ -265,7 +301,19 @@ service xinetd restart<br>
 
 =======================================================
 
+
+### PUPPET SERVER
+
+SERVERNAME = peserver.localhost.com
+
+# Follow Steps:
+- Install OS from local DVD
+- POST INSTALL Network Config
+
 #### Create a Puppet Server
+
+
+
 
 #### PUPPET-SERVER Install
 
