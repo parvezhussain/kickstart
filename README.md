@@ -100,13 +100,15 @@ Click OK
 Login to Kickstart server.<br>
 Edit /etc/dhcp/dhcpd.conf <br>
 Add the Lines:<br>
- host PXEClient1 {
-    hardware ethernet 08:00:27:C1:B6:01;
-    fixed-address 192.168.1.6;
-    filename "pxelinux.0";
-    option host-name "peserver.localhost.com";
+
+ host PXEClient1 {<br>
+    hardware ethernet 08:00:27:C1:B6:01;<br>
+    fixed-address 192.168.1.6;<br>
+    filename "pxelinux.0";<br>
+    option host-name "peserver.localhost.com";<br>
  }
 
+service dhcpd restart
 
 ========================================
 
@@ -129,14 +131,11 @@ The pxeserver vm will automatically reboot.
 ### Install OS from Kickstart Server (Network Install)
 - Create the VM
 - From network Configuration Use OPTION 1 or 2
-- use OPTION A to boot/install from local DVD
+- use HOWTO Configure VM to boot/install from kickstart server
 
 From Navigation Panel, select 'pxeserver' and click 'Start'<br>
-Centos will start installation.<br>
-Except the below settings, select all default <br>
-hostname:    pxeserver.localhost.com<br>
-Server type: minimal
-
+DHCP will try to connect to the kickstart server.<br>
+Server installation will start<br>
 The pxeserver vm will automatically reboot.
 
 ========================================
@@ -307,15 +306,11 @@ service xinetd restart<br>
 SERVERNAME = peserver.localhost.com
 
 # Follow Steps:
-- Install OS from local DVD
+-  Install OS from Kickstart Server (Network Install)
+      * Select 'Install 6.8 no puppet'
 - POST INSTALL Network Config
 
-#### Create a Puppet Server
-
-
-
-
-#### PUPPET-SERVER Install
+#### Configure PUPPET-SERVER Install
 
 yum install http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm -y
 
@@ -328,7 +323,7 @@ Add the line:
     # Where SSL certificates are kept.
     # The default value is '$confdir/ssl'.
     ssldir = $vardir/ssl
-    alt_dns_names = jbccllpupc610,jbccllpupc610.localhost.com
+    alt_dns_names = peserver,peserver.localhost.com
 
 /etc/init.d/iptables stop<br>
 chkconfig | grep iptables<br>
@@ -343,19 +338,36 @@ chkconfig | grep puppetmaster<br>
 chkconfig puppetmaster on<br>
 chkconfig | grep puppetmaster<br>
 
+=============================================
 
+### PUPPET CLIENT
 
-ifconfig
+SERVERNAME = peclient1.localhost.com
 
-yum install telnet -y
-puppet cert list
-puppet cert sign peclient.localhost.com
+# Follow Steps:
+-  Install OS from Kickstart Server (Network Install)
+      * Select 'Install 6.8'
+- POST INSTALL Network Config
+
+Open peclient1 on aputty session
+
+ifconfig<br>
+ping peserver.localhost.com
+
+Login to peserver using putty<br>
+puppet cert list<br>
+puppet cert sign peclient1.localhost.com
 
 cd /etc/puppet
 
 ps -ef | grep puppet
 
 puppet agent -tv
+
+=================================================
+######## END###############################
+
+
 
 
 Installation Process:
