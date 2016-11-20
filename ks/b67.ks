@@ -1,6 +1,5 @@
 install
-#url --url http://192.168.1.1/centos/6
-url --url http://192.168.1.1/centos/6.7
+url --url http://192.168.1.1/centos/6
 lang en_US.UTF-8
 keyboard us
 timezone --utc America/Chicago
