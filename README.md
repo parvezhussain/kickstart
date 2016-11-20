@@ -176,6 +176,7 @@ This is one part of PXE boot<br>
  
 ###KICKSTART SERVER 
 
+### Create puppetlab client yum repo
 Download Files For PUPPET Client yum repo--- <br>
 
 mkdir /var/www/html/puppetlabs<br>
@@ -193,6 +194,19 @@ CMD='wget -r -nH -nc --cut-dirs=7 --no-parent --reject="index.html*"'
 $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-augeas-0.4.1-3.el6.x86_64.rpm<br>
 $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/ruby-shadow-2.2.0-2.el6.x86_64.rpm<br>
 $CMD http://mirror.symnds.com/software/puppet/yum/el/6/dependencies/x86_64/rubygem-json-1.5.5-3.el6.x86_64.rpm<br>
+
+yum install createrepo -y<br>
+cd /var/www/html<br>
+createrepo puppetlabs<br>
+
+   ls -l puppetlabs/repodata
+   -rw-r--r--. 1 root root  2986 Nov 20 10:08 repomd.xml
+
+
+
+
+
+
 
 Configure PXE server <br>
 https://wiki.centos.org/HowTos/NetworkInstallServer
