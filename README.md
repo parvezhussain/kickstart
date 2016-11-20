@@ -24,6 +24,7 @@ https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
 
+================================================
 
 ### Create and Install the Kickstart Server
 
@@ -32,9 +33,7 @@ Make sure all the above software are installed
 ====== Reference Video ============<br>
 Install centos on the guest VM. Select 'Minimal" during installation <br>
 https://www.youtube.com/watch?v=z0_d_06jrWE<br>
-
-================================================
-
+====== Reference Video ============<br>
 
 ### Create a Guest VM
 
@@ -52,13 +51,14 @@ File size: 20GB  (depends on usage 8 GB to 30 GB)<br>
 
 Click 'Create'
 
+========================================
 
 ========== Reference Article ============== <br>
 Open Oracle VirtualBox and setup the network as per the instructions provided below. (IMPORTANT) <br>
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest<br>
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/<br>
+========== Reference Article ============== <br>
 
-========================================
 
 #### USE Option 1 or option 2
 ### OPTION 1: HOWTO Configure Guest VM to conect to Internet and Internal network
@@ -93,6 +93,7 @@ Select 'Storage' from Navigation Panel<br>
 (From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso<br>
 Click OK
 
+========================================
 
 ### Install OS from local DVD
 - Create the VM
@@ -107,6 +108,7 @@ Server type: minimal
 
 The pxeserver vm will automatically reboot.
 
+========================================
 
 ### POST INSTALL Network Config
 
@@ -137,6 +139,9 @@ if you are successful, Congratulation!! you are able to connect to the pxe serve
 Now test the outbound connection.<br>
 From pxe server, ping www.google.com <br>
 You should see response. Congratulation!! your outbound connection is working. <br>
+
+========================================
+
 
 ### Configure the Kickstart Server
 
@@ -180,10 +185,9 @@ Make sure you are able to browse the FILES ALSO.<br>
 CONGRATULATION!! your web file server is working.<br>
 This is one part of PXE boot<br>
 
+========================================
 
-
- 
-###KICKSTART SERVER 
+### BUILD the PUPPET REPO
 
 ### Create puppetlab client yum repo
 Download Files For PUPPET Client yum repo--- <br>
@@ -211,16 +215,13 @@ createrepo puppetlabs<br>
    ls -l puppetlabs/repodata<br>
    -rw-r--r--. 1 root root  2986 Nov 20 10:08 repomd.xml
 
+========================================
 
+#### Configure PXE Server
 
-
-
-
-
-Configure PXE server <br>
-https://wiki.centos.org/HowTos/NetworkInstallServer
-
-Point your repository to  /var/www/html/centos/6
+========== Refrence Article =============== <br>
+https://wiki.centos.org/HowTos/NetworkInstallServer <br>
+========== Refrence Article =============== <br>
 
 ### Copy kickstart files and config
 
