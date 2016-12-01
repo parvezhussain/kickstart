@@ -72,7 +72,7 @@ Adaptor 3<br>
 'Enable Network Adapter' checked box. Attached to: NAT<br>
 Click 'OK'
 
-### OPTION 2: HOWTO Configure Guest VM to conect to Internal Network ONLY
+### OPTION 2: HOWTO Configure Guest VM to connect to Internal Network ONLY
 Select the the guest VM 'pxeserver'. Select 'Settings'<br>
 Select 'Network' from navigation panel.<br>
 Adaptor 1<br>
@@ -89,7 +89,7 @@ Click OK<br>
 Click 'Start' to start the VM.
 
 
-### OPTION A: HOWTO Configure VM to boot/install from kickstart server
+### OPTION B: HOWTO Configure VM to boot/install from kickstart server
 Make sure the Kickstart server is working fine<br>
 Select the VM from Navigation Panel. Click 'Settings'<br>
 Select 'System' from Navigation Panel<br>
@@ -176,7 +176,7 @@ You should see response. Congratulation!! your outbound connection is working. <
 
 SERVERNAME = pxeserver.localhost.com
 
-# Follow Steps:
+#### Follow Steps:
 - Install OS from local DVD
 - POST INSTALL Network Config
 
@@ -305,7 +305,7 @@ service xinetd restart<br>
 
 SERVERNAME = peserver.localhost.com
 
-# Follow Steps:
+#### Follow Steps:
 -  Install OS from Kickstart Server (Network Install)
       * Select 'Install 6.8 no puppet'
 - POST INSTALL Network Config
