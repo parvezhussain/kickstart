@@ -260,18 +260,22 @@ https://wiki.centos.org/HowTos/NetworkInstallServer <br>
 
 ### Copy kickstart files and config
 
-cd /var/www/html<br>
-cp -pr /opt/git/ks .<br>
+    cd /var/www/html
+    cp -pr /opt/git/ks .
 
-cd /var/www/html/ks <br>
-
-Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the files <br>
-
+Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the files
+    
     [root@pxeserver html]# ls -l
     total 12
     drwxr-xr-x. 3 root root 4096 Nov 20 07:36 centos
     drwxr-xr-x. 3 root root 4096 Nov 20 07:34 ks
     drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
+    
+    cd /var/www/html/ks
+    find . -type f | xargs grep 192.168.1.1
+
+ Edit puppet.conf file and make changes
+ Edit puppet.conf_pemaster and make changes
 
 ### Configure dhcp server 
 
