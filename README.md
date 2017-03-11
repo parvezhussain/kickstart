@@ -291,7 +291,7 @@ cp -p /var/www/html/centos/6/images/pxeboot/* /var/lib/tftpboot/centos/6.8/<br>
     -rw-r--r--. 1 root root 40688737 May 22 01:06 initrd.img
     -rw-r--r--. 1 root root  4264528 May 22 01:06 vmlinuz
 
-Edit 
+Edit <br>
 /var/lib/tftpboot/pxelinux.cfg/default <br>
 /var/www/html/ks/b67.ks <br>
 /var/www/html/ks/b67_nopuppet.ks <br>
