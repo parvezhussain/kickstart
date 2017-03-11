@@ -281,7 +281,7 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
     cd /var/www/html/ks
     find . -type f | xargs grep 192.168.1.1
 
- Edit puppet.conf file and make changes
+ Edit puppet.conf file and make changes <br>
  Edit puppet.conf_pemaster and make changes
 
 ### Configure dhcp server 
