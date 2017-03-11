@@ -210,10 +210,10 @@ chkconfig httpd on<br>
 chkconfig | grep httpd
 
 
-From your laptop browser check http://<eth1 IPaddress of pxeserver> <br>
+From your laptop browser check http://(IPaddress of pxeserver) <br>
 You should see the Apache page. This means the apache is working.
 
-http://(eth1 IPaddress of pxeserver)/centos/6<br>
+http://(IPaddress of pxeserver)/centos/6<br>
 You should see all the files and folders like http://mirror.centos.org/centos/6.8/os/x86_64/<br>
 Make sure you are able to browse the FILES ALSO.<br>
 
