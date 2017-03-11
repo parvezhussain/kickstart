@@ -263,6 +263,10 @@ https://wiki.centos.org/HowTos/NetworkInstallServer <br>
 cd /var/www/html<br>
 cp -pr /opt/git/ks .<br>
 
+cd /var/www/html/ks <br>
+
+Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the files <br>
+
     [root@pxeserver html]# ls -l
     total 12
     drwxr-xr-x. 3 root root 4096 Nov 20 07:36 centos
