@@ -172,7 +172,13 @@ You should see response. Congratulation!! your outbound connection is working. <
 
 =======================================
 
-### KICKSTART SERVER
+### BUILDING KICKSTART SERVER
+
+There are 3 parts
+ 1. dhcp server
+ 2. tftp server
+ 3. web server
+
 
 SERVERNAME = pxeserver.localhost.com
 
@@ -192,6 +198,7 @@ Set SELinux to permissive Otherwise file browsing through http webserver will no
 Edit the file /etc/selinux/config<br>
 SELINUX=permissive
 
+##### 1.Build the Webserver
 mkdir -p /var/www/html/centos/6.8<br>
 cd /var/www/html/centos<br>
 ln -s 6.8 6<br>
