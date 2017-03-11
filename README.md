@@ -295,7 +295,7 @@ Edit <br>
 /var/lib/tftpboot/pxelinux.cfg/default <br>
 /var/www/html/ks/b67.ks <br>
 /var/www/html/ks/b67_nopuppet.ks <br>
-Make sure all the paths are correct and accessible.<br>
+Update the IP address of the kickstart server and make sure all the paths are correct and accessible.<br>
 
 service iptables save<br>
 chkconfig tftp on<br>
