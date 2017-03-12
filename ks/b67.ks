@@ -67,11 +67,11 @@ NETWORK=`ipcalc $IPADDR -n $NETMASK|awk -F= '{print $2}'`
 GATEWAY=`route -n|grep '^0.0.0.0'|awk '{print $2}'`
 HWADDR=`ifconfig $DEVICE|grep 'HWaddr'|awk '{print $5}'`
 
-cat <<EOF >/etc/sysconfig/network
-NETWORKING=yes
-HOSTNAME=$HOSTNAME
-GATEWAY=$GATEWAY
-EOF
+#cat <<EOF >/etc/sysconfig/network
+#NETWORKING=yes
+#HOSTNAME=$HOSTNAME
+3GATEWAY=$GATEWAY
+#EOF
 
 cat <<EOF >/etc/sysconfig/network-scripts/ifcfg-$DEVICE
 DEVICE=$DEVICE
