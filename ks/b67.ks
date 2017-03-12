@@ -5,7 +5,8 @@ keyboard us
 timezone --utc America/Chicago
 network --noipv6 --onboot=yes --bootproto dhcp
 authconfig --enableshadow --enablemd5
-rootpw --iscrypted $6$Gjoe77bLWE3E9Hh2$dzgnFXpIagl/fiNBBqqEkedOo1gqK1X4yf1ItvyOoW2FqJyCHFSrAJJ1cDX2hmFHka5zyZvMKg2kqsQDy5epD.
+##root password is 'changeme'
+rootpw --iscrypted $1$KXnnttMd$kJfDBf0eN5q0hAFbXW8.D.
 firewall --enabled --port 22:tcp
 selinux --permissive
 bootloader --location=mbr --driveorder=sda --append="crashkernel=auth rhgb"
