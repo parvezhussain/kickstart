@@ -73,6 +73,14 @@ ONBOOT=yes
 HWADDR=$HWADDR
 EOF
 
+cat <<EOF >/etc/sysconfig/network-scripts/ifcfg-eth1
+DEVICE=eth1
+TYPE=Ethernet
+NM_CONTROLLED=yes
+BOOTPROTO=dhcp
+ONBOOT=yes
+EOF
+
 echo "Updating YUM Repositories"
 cd /etc/yum.repos.d
 cp -p CentOS-Base.repo CentOS-Base.repo.orig
