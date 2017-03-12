@@ -81,6 +81,14 @@ ONBOOT=yes
 HWADDR=$HWADDR
 EOF
 
+cat <<EOF >/etc/sysconfig/network-scripts/ifcfg-eth1
+DEVICE=eth1
+TYPE=Ethernet
+NM_CONTROLLED=yes
+BOOTPROTO=dhcp
+ONBOOT=yes
+EOF
+
 cat <<EOF >/etc/resolv.conf
 domain localhost.com
 nameserver 192.168.1.1
