@@ -239,6 +239,7 @@ cd /var/www/html/puppetlabs
 
 CMD='wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*"'
 
+$CMD https://yum.puppetlabs.com/el/6/products/x86_64/puppet-3.8.7-1.el6.noarch.rpm <br>
 $CMD https://yum.puppetlabs.com/el/6/products/x86_64/facter-1.7.0-1.el6.x86_64.rpm<br>
 $CMD https://yum.puppetlabs.com/el/6/products/x86_64/hiera-1.3.4-1.el6.noarch.rpm<br>
 
