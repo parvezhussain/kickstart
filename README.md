@@ -371,7 +371,16 @@ SERVERNAME = peclient1.localhost.com
 Open peclient1 on aputty session
 
 ifconfig<br>
+
+Edit /etc/hosts and add
+192.168.56.23  peclient1.localhost.com
+192.168.56.22 peserver.localhost.com
+192.168.56.20 pxeserver.localhost.com
+
 ping peserver.localhost.com
+ping www.google.com
+ping pxeserver.localhost.com
+
 
 Login to peserver using putty<br>
 puppet cert list<br>
