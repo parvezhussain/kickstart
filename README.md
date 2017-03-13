@@ -280,7 +280,8 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
     drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
     
     cd /var/www/html/ks
-    find . -type f | xargs grep 192.168.1.1
+    perl -pi -e 's/192.168.1.1/192.168.56.20/g' *
+
 
  Edit puppet.conf file and make changes <br>
  Edit puppet.conf_pemaster and make changes
