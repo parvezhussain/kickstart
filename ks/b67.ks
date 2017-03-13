@@ -70,7 +70,7 @@ HWADDR=`ifconfig $DEVICE|grep 'HWaddr'|awk '{print $5}'`
 #cat <<EOF >/etc/sysconfig/network
 #NETWORKING=yes
 #HOSTNAME=$HOSTNAME
-3GATEWAY=$GATEWAY
+#GATEWAY=$GATEWAY
 #EOF
 
 cat <<EOF >/etc/sysconfig/network-scripts/ifcfg-$DEVICE
@@ -90,10 +90,10 @@ BOOTPROTO=dhcp
 ONBOOT=yes
 EOF
 
-cat <<EOF >/etc/resolv.conf
-domain localhost.com
-nameserver 192.168.1.1
-EOF
+#cat <<EOF >/etc/resolv.conf
+#domain localhost.com
+#nameserver 192.168.1.1
+#EOF
 
 echo "Updating YUM Repositories"
 cd /etc/yum.repos.d
