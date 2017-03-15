@@ -286,9 +286,9 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
 
 ### Configure dhcp server 
 
-    cd /etc/dhcp<br>
-    mv dhcpd.conf dhcpd.conf_orig<br>
-    cp -p /opt/git/dhcp/dhcpd.conf .<br>
+    cd /etc/dhcp
+    mv dhcpd.conf dhcpd.conf_orig
+    cp -p /opt/git/dhcp/dhcpd.conf .
 
 Edit dhcpd.conf and update the IP. <br>
 
