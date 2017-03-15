@@ -65,10 +65,8 @@ http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet
 Select the the guest VM 'pxeserver'. Select 'Settings'<br>
 Select 'Network' from navigation panel.<br>
 Adaptor 1<br>
-'Enable Network Adapter' checked box. Attached to: Internal Network<br>
-Adaptor 2<br>
 'Enable Network Adapter' checked box. Attached to: Host-Only Adapter<br>
-Adaptor 3<br>
+Adaptor 2<br>
 'Enable Network Adapter' checked box. Attached to: NAT<br>
 Click 'OK'
 
@@ -84,13 +82,13 @@ Click 'OK'
 Select the VM from Navigation Panel. Click 'Settings'
 Select 'Storage' from Navigation Panel<br>
 (From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty<br>
-(From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso<br>
+(From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso that was downloaded<br>
 Click OK<br>
 Click 'Start' to start the VM.
 
 
 ### OPTION B: HOWTO Configure VM to boot/install from kickstart server
-Make sure the Kickstart server is working fine<br>
+Make sure the Kickstart server is working fine. We will learn how to setup Kickstart server in the later part of this document<br>
 Select the VM from Navigation Panel. Click 'Settings'<br>
 Select 'System' from Navigation Panel<br>
 Under Motherboard, checkbox Network and move it to the top of the list<br>
@@ -101,12 +99,12 @@ Login to Kickstart server.<br>
 Edit /etc/dhcp/dhcpd.conf <br>
 Add the Lines:<br>
 
- host PXEClient1 {<br>
-    hardware ethernet 08:00:27:C1:B6:01;<br>
-    fixed-address 192.168.1.6;<br>
-    filename "pxelinux.0";<br>
-    option host-name "peserver.localhost.com";<br>
- }
+    host PXEClient1 {
+         hardware ethernet 08:00:27:C1:B6:01;
+         fixed-address 192.168.1.6;
+         filename "pxelinux.0";
+         option host-name "peserver.localhost.com";
+    }
 
 service dhcpd restart
 
@@ -390,31 +388,55 @@ SERVERNAME = peclient1.localhost.com
       * Select 'Install 6.8'
 - POST INSTALL Network Config
 
-Open peclient1 on aputty session
+Open peclient1 on putty session
 
 ifconfig<br>
 
+
+### Configure puppet client to connect to puppet master
+
+The kickstart process has already configured most of the steps below. <br>
+In case it does not work, verify the below steps. <br>
+
 Edit /etc/hosts and add
-192.168.56.23  peclient1.localhost.com
-192.168.56.22 peserver.localhost.com
-192.168.56.20 pxeserver.localhost.com
 
-ping peserver.localhost.com
-ping www.google.com
-ping pxeserver.localhost.com
+    192.168.56.20  peclient1.localhost.com
+    192.168.56.11 peserver.localhost.com
+    192.168.56.10 pxeserver.localhost.com
 
+Test the connectivity (important for puppet to work)
+
+    ping peserver.localhost.com
+    ping www.google.com
+    ping pxeserver.localhost.com
+
+Open crontab and add the line 
+             
+      * * * * * /usr/bin/puppet agent -tv >> /tmp/puppet.out
+
+Run 'puppet agent -tv'
+
+You should see someoutput if not then puppet node is not configured correctly <br>
+(Check /etc/hosts file  and /etc/puppet/puppet.conf file for puppetmaster server)
 
 Login to peserver using putty<br>
 puppet cert list<br>
-puppet cert sign peclient1.localhost.com
 
-cd /etc/puppet
+    [root@peserver opt]# puppet cert list
+    "peclient1.localhost.com" (SHA256) 05:D2:EB:2D:07:10:61:8F:2A:8C:E4:14:A7:20:17:DD:48:F5:51:FB:08:40:0B:F3:13:4E:C4:F5:55:44:D9:FA
+    [root@peserver opt]#
 
-ps -ef | grep puppet
 
-puppet agent -tv
+Sign the node agent certificate
 
-=================================================
+    puppet cert sign peclient1.localhost.com
+
+Your puppet node is configured and connected to puppet master. <BR>
+
+================================================= <br>
+
+YOUR ENVIRONMENT IS READY TO LEARN PUPPET OR ANY OTHER TOOLS
+
 ######## END###############################
 
 
