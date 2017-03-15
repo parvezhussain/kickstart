@@ -286,20 +286,29 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
 
 ### Configure dhcp server 
 
-cd /etc/dhcp<br>
-mv dhcpd.conf dhcpd.conf_orig<br>
-cp -p /opt/git/dhcp/dhcpd.conf .<br>
-service dhcpd restart<br>
-chkconfig dhcpd on<br>
-chkconfig | grep dhcpd<br>
+    cd /etc/dhcp<br>
+    mv dhcpd.conf dhcpd.conf_orig<br>
+    cp -p /opt/git/dhcp/dhcpd.conf .<br>
+
+Edit dhcpd.conf and update the IP. <br>
+
+Restart dhcpd service and start on boot
+
+    service dhcpd restart<br>
+    chkconfig dhcpd on<br>
+    chkconfig | grep dhcpd<br>
+
+This completes your DHCP Server <br>
+
 
 ### Configure tftp server<br>
-cd /var/lib/tftpboot<br>
-cp /usr/share/syslinux/pxelinux.0 .<br>
-cp /usr/share/syslinux/menu.c32 .<br>
-mkdir -p pxelinux.cfg centos/6.8<br>
-cp -p /opt/git/tftpboot/pxelinux.cfg/default /var/lib/tftpboot/pxelinux.cfg/<br>
-cp -p /var/www/html/centos/6/images/pxeboot/* /var/lib/tftpboot/centos/6.8/<br>
+
+    cd /var/lib/tftpboot
+    cp /usr/share/syslinux/pxelinux.0 .
+    cp /usr/share/syslinux/menu.c32 .
+    mkdir -p pxelinux.cfg centos/6.8
+    cp -p /opt/git/tftpboot/pxelinux.cfg/default /var/lib/tftpboot/pxelinux.cfg/
+    cp -p /var/www/html/centos/6/images/pxeboot/* /var/lib/tftpboot/centos/6.8/
 
     ls -l /var/lib/tftpboot/centos/6.8/
     total 43904
@@ -312,9 +321,10 @@ Edit <br>
 /var/www/html/ks/b67_nopuppet.ks <br>
 Update the IP address of the kickstart server and make sure all the paths are correct and accessible.<br>
 
-service iptables save<br>
-chkconfig tftp on<br>
-service xinetd restart<br>
+Start tftp service and start on boot
+
+    service xinetd restart
+    chkconfig tftp on
 
 =======================================================
 
