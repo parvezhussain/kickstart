@@ -294,9 +294,9 @@ Edit dhcpd.conf and update the IP. <br>
 
 Restart dhcpd service and start on boot
 
-    service dhcpd restart<br>
-    chkconfig dhcpd on<br>
-    chkconfig | grep dhcpd<br>
+    service dhcpd restart
+    chkconfig dhcpd on
+    chkconfig | grep dhcpd
 
 This completes your DHCP Server <br>
 
