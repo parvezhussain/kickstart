@@ -358,6 +358,27 @@ chkconfig | grep puppetmaster<br>
 chkconfig puppetmaster on<br>
 chkconfig | grep puppetmaster<br>
 
+## Get Puppet manifest from Git
+
+yum install git -y
+
+mkdir /opt/git
+git clone https://(your_github_id)@github.com/parvezhussain/puppetrepo.git /opt/git
+
+cd /etc
+mv puppet puppet_orig
+cp -pr /opt/git/puppet .
+Edit puppet.conf
+        
+       ssldir = $vardir/ssl
+       alt_dns_names = peserver,peserver.localhost.com
+
+service puppetmaster restart
+
+Edit /etc/hosts
+
+    192.168.56.10 peserver.localhost.com
+
 =============================================
 
 ### PUPPET CLIENT
