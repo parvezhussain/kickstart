@@ -377,7 +377,7 @@ service puppetmaster restart
 
 Edit /etc/hosts
 
-    192.168.56.10 peserver.localhost.com
+    192.168.56.11 peserver.localhost.com
 
 =============================================
 
