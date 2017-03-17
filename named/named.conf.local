@@ -1,9 +1,0 @@
-zone "localhost.com" {
-	type master;
-	file "/etc/named/zones/db.localhost.com";
-};
-
-zone "1.168.192.in-addr.arpa" {
-	type master;
-	file "/etc/named/zones/db.1.168.192";
-};
