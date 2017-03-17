@@ -1,0 +1,17 @@
+$TTL 604800
+@       IN      SOA     bind.localhost.com. admin.localhost.com. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+; name servers - NS records
+	IN 	NS	bind.localhost.com.
+
+; PTR Records
+
+100	IN	PTR	bind.localhost.com.
+10	IN      PTR     pxeserver.localhost.com.
+11	IN      PTR     peserver.localhost.com.
+20	IN      PTR     peclient1.localhost.com.
