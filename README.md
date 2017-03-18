@@ -190,8 +190,9 @@ SERVERNAME = pxeserver.localhost.com
 Download kickstart Repo
 
     mkdir /opt/git
+    ls -l /opt/git
     git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
-
+    ls -l /opt/git
 
 ##### 1.Build the Webserver
 
@@ -290,12 +291,18 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
     drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
     
     cd /var/www/html/ks
-    perl -pi -e 's/192.168.1.1/192.168.56.20/g' *
+    perl -pi -e 's/192.168.1.1/<pxeserver ip>/g' *
+    cd /var/www/html/ks/6.7
+    perl -pi -e 's/192.168.1.1/<pxeserver ip>/g' *
+    
 
 
- Edit puppet.conf file and make changes <br>
- Edit puppet.conf_pemaster and make changes
-
+ Edit the below file and make changes<br>
+ /var/www/html/ks/6.7/puppet.conf_pemaster
+ /var/www/html/ks/6.7/puppet.conf
+ /var/www/html/ks/6.7/CentOS-Base.repo
+ 
+ 
 ### Configure dhcp server 
 
     cd /etc/dhcp
