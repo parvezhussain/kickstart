@@ -1,4 +1,4 @@
-### WHAT YOU WILL NEED ON YOUR LAPTOP (HOST MACHINE)
+### Tools On Your Laptop (HOST MACHINE)
 
 1. Oracle virtual box <br>
 https://www.virtualbox.org/ <br>
