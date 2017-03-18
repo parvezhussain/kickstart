@@ -6,7 +6,7 @@ My requirement is:
 - From my laptop, I should be able to ssh to the VMs
 - The VMs should be able to access internet.
 
-For my requirement I choosed:
+For my requirement I will choose:
 - Adapter 1 -> Host-only Adapter
 - Adapter 2 -> NAT
 
@@ -15,3 +15,5 @@ https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box
 
 How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest 
 http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+
+Let us provision the VMs.
