@@ -18,10 +18,10 @@ perl -pi -e 's/ 192.168.1/<your_bindserver-ip_first_3_octat>/g' named.conf
 
 Edit  /etc/named.conf and check
 
-Cd/opt/git/bind/named
+cd /opt/git/bind/named
 Update named.conf.local and check the file
 
-Cd /opt/git/bind/named/zones
+cd /opt/git/bind/named/zones
 Check the files
 
 Copy the files 
