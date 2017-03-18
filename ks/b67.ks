@@ -90,10 +90,10 @@ BOOTPROTO=dhcp
 ONBOOT=yes
 EOF
 
-#cat <<EOF >/etc/resolv.conf
-#domain localhost.com
-#nameserver 192.168.1.1
-#EOF
+cat <<EOF >/etc/resolv.conf
+domain localhost.com
+nameserver 192.168.1.1
+EOF
 
 echo "Updating YUM Repositories"
 cd /etc/yum.repos.d
