@@ -27,11 +27,8 @@ Install 'Oracle VirtualBox Extension Pack'
 - On the navigation panel, select 'extension'
 - On the right of dialog box, click on the blue box and provide the path to the downloaded 'Oracle VirtualBox Extension Pack' and install.
 
+Install Winscp and Putty. Choose default installation.
 
+You now have all the tools for yourTest/Dev Environment.
 
-
-Read this article to understand Networking on Oracle Virtualbox<br>
-https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/
-
-How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest
-http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+NEXT STEP: Provision Your VMs in VirtualBox 
