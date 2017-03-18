@@ -173,9 +173,10 @@ You should see response. Congratulation!! your outbound connection is working. <
 ### BUILDING KICKSTART SERVER
 
 There are 3 parts
- 1. dhcp server
- 2. tftp server
- 3. web server
+ 1. web server
+ 2. dhcp server
+ 3. tftp server
+
 
 
 SERVERNAME = pxeserver.localhost.com
@@ -184,35 +185,44 @@ SERVERNAME = pxeserver.localhost.com
 - Install OS from local DVD
 - POST INSTALL Network Config
 
-yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet wget
+    yum -y install rsync httpd dhcp tftp-server syslinux git mlocate elinks bind-utils telnet wget
 
-mkdir /opt/git <br>
-git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
+Download kickstart Repo
 
-Disable iptables<br>
-service iptables stop<br>
-chkconfig iptables off<br>
-Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
-Edit the file /etc/selinux/config<br>
-SELINUX=permissive
+    mkdir /opt/git
+    git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
+
 
 ##### 1.Build the Webserver
-mkdir -p /var/www/html/centos/6.8<br>
-cd /var/www/html/centos<br>
-ln -s 6.8 6<br>
-cd /var/www/html/centos/6.8<br>
 
-wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
+    mkdir -p /var/www/html/centos/6.8
+    cd /var/www/html/centos
+    ln -s 6.8 6
+    cd /var/www/html/centos/6.8
+
+    wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
 
 Under /var/www/html/centos/6.8, you should see the same files as http://mirror.centos.org/centos/6.8/os/x86_64/
- 
-Start httpd<br>
-service httpd start  (ignore any error) <br>
-ps -ef | grep httpd
 
-Make sure httpd start on boot<br>
-chkconfig httpd on<br>
-chkconfig | grep httpd
+Disable iptables<br>
+
+    service iptables stop
+    chkconfig iptables off
+    
+Set SELinux to permissive Otherwise file browsing through http webserver will not work <br>
+Edit the file /etc/selinux/config
+        
+    SELINUX=permissive
+    
+Start httpd
+
+    service httpd start  (ignore any error)
+    ps -ef | grep httpd
+
+Make sure httpd start on boot
+
+    chkconfig httpd on
+    chkconfig | grep httpd
 
 
 From your laptop browser check http://(IPaddress of pxeserver) <br>
