@@ -80,6 +80,7 @@ IPADDR=$IPADDR
 NETMASK=$NETMASK
 ONBOOT=yes
 HWADDR=$HWADDR
+PEERDNS=no   #/etc/resolv.conf does not get overwritten by dhclient
 EOF
 
 cat <<EOF >/etc/sysconfig/network-scripts/ifcfg-eth1
@@ -88,6 +89,7 @@ TYPE=Ethernet
 NM_CONTROLLED=yes
 BOOTPROTO=dhcp
 ONBOOT=yes
+PEERDNS=no   #/etc/resolv.conf does not get overwritten by dhclient
 EOF
 
 cat <<EOF >/etc/resolv.conf
