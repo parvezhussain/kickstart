@@ -20,7 +20,7 @@ Click 'Start' to start the VM. <br>
 ## OPTION B: HOWTO Configure VM to boot/install from kickstart server <br>
 
 Make sure the Kickstart server is working fine. <br>
-We will learn how to setup Kickstart server in the later part of this document <br>
+We will learn how to setup Kickstart server in the later part of this document <br> <br>
 Select the VM from Navigation Panel. Click 'Settings' <br>
 Select 'System' from Navigation Panel <br>
 Under Motherboard, checkbox Network and move it to the top of the list <br>
