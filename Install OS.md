@@ -1,5 +1,5 @@
 Please complete the following article before proceeding <br>
-https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md
+https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
 https://github.com/parvezhussain/kickstart/blob/master/Provision%20Your%20VMs.md
 
 OS Used: CentOS 6.8
