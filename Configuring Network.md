@@ -5,13 +5,13 @@ On the laptop command prompt, type 'ipconfig'
 
 You will see a new network created like below. (The IP address will vary)
 
-Ethernet adapter Ethernet 3:
+      Ethernet adapter Ethernet 3:
 
-   Connection-specific DNS Suffix  . :
-   Link-local IPv6 Address . . . . . : fe80::b022:e867:40bc:e31c%33
-   IPv4 Address. . . . . . . . . . . : 192.168.56.1
-   Subnet Mask . . . . . . . . . . . : 255.255.255.0
-   Default Gateway . . . . . . . . . :
+      Connection-specific DNS Suffix  . :
+      Link-local IPv6 Address . . . . . : fe80::b022:e867:40bc:e31c%33
+      IPv4 Address. . . . . . . . . . . : 192.168.56.1
+      Subnet Mask . . . . . . . . . . . : 255.255.255.0
+      Default Gateway . . . . . . . . . :
 
 So all your VMs network IPs should be 192.168.56.x
 
