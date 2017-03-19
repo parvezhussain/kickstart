@@ -19,14 +19,18 @@ Click 'Start' to start the VM. <br>
 
 ## OPTION B: HOWTO Configure VM to boot/install from kickstart server <br>
 
-Make sure the Kickstart server is working fine. <br>
+#### On the VM
+
+Make sure the Kickstart server is setup. <br>
 We will learn how to setup Kickstart server in the later part of this document <br> <br>
 Select the VM from Navigation Panel. Click 'Settings' <br>
 Select 'System' from Navigation Panel <br>
-Under Motherboard, checkbox Network and move it to the top of the list <br>
+Under Motherboard -> Boot Order, checkbox Network and move it to the TOP of the list <br>
 Select 'Network'. Under 'Adapter1 Setting' expand 'Advanced'. Note the MAC address. <br>
 Click OK <br>
 
+
+#### On the Kickstart Server
 Login to Kickstart server.
 Edit /etc/dhcp/dhcpd.conf
 Add the Lines:
@@ -38,7 +42,14 @@ host PXEClient1 {
      option host-name "peserver.localhost.com";
 }
 
+Update the MAC Address (noted from above) <br>
+Update the IP address
+
 service dhcpd restart
+
+#### On the VM (again)
+
+Start the VM
 
 ======================================== <br>
 
