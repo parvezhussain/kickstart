@@ -2,27 +2,30 @@ Please complete the following article before proceeding <br>
 https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
 https://github.com/parvezhussain/kickstart/blob/master/Provision%20Your%20VMs.md
 
-OS Used: CentOS 6.8
+OS: CentOS 6.8
 
 We will use 2 different ways to install OS.
 - From Local DVD
 - From Kickstart Server
 
-OPTION A: HOWTO Configure VM to boot/install from local DVD
+## OPTION A: HOWTO Configure VM to boot/install from local DVD
 
-Select the VM from Navigation Panel. Click 'Settings' Select 'Storage' from Navigation Panel
-(From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty
-(From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso that was downloaded
-Click OK
-Click 'Start' to start the VM.
-OPTION B: HOWTO Configure VM to boot/install from kickstart server
+Select the VM from Navigation Panel. Click 'Settings' Select 'Storage' from Navigation Panel <br>
+(From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty <br>
+(From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso that was downloaded <br>
+Click OK <br>
+Click 'Start' to start the VM. <br>
 
-Make sure the Kickstart server is working fine. We will learn how to setup Kickstart server in the later part of this document
-Select the VM from Navigation Panel. Click 'Settings'
-Select 'System' from Navigation Panel
-Under Motherboard, checkbox Network and move it to the top of the list
-Select 'Network'. Under 'Adapter1 Setting' expand 'Advanced'. Note the MAC address.
-Click OK
+
+## OPTION B: HOWTO Configure VM to boot/install from kickstart server <br>
+
+Make sure the Kickstart server is working fine. <br>
+We will learn how to setup Kickstart server in the later part of this document <br>
+Select the VM from Navigation Panel. Click 'Settings' <br>
+Select 'System' from Navigation Panel <br>
+Under Motherboard, checkbox Network and move it to the top of the list <br>
+Select 'Network'. Under 'Adapter1 Setting' expand 'Advanced'. Note the MAC address. <br>
+Click OK <br>
 
 Login to Kickstart server.
 Edit /etc/dhcp/dhcpd.conf
@@ -37,8 +40,9 @@ host PXEClient1 {
 
 service dhcpd restart
 
-========================================
-Install OS from local DVD
+======================================== <br>
+
+## Install OS from local DVD
 
     Create the VM
     From network Configuration Use OPTION 1 or 2
