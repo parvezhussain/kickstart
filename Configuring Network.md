@@ -1,5 +1,5 @@
-
-Identifying the network the VM should use <br>
+The first step is Identifying the network the VM should use <br>
+<br>
 On the laptop command prompt, <br>
 type 'ipconfig'<br>
 
