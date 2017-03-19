@@ -1,7 +1,7 @@
 
-Identifying the network the VM should used
-
-On the laptop command prompt, type 'ipconfig'
+Identifying the network the VM should use <br>
+On the laptop command prompt, <br>
+type 'ipconfig'<br>
 
 You will see a new network created like below. (The IP address will vary)
 
@@ -17,12 +17,12 @@ So all your VMs network IPs should be 192.168.56.x
 
 We will now configure the VM network for inbound and outbound traffic  
 
-Inbound traffic i.e ability to ssh to vm, i.e Adapter 1 (Host-only adapter)  i.e ifcfg-eth0
+Inbound traffic i.e ability to ssh to vm, i.e Adapter 1 (Host-only adapter)  i.e ifcfg-eth0 <br>
 Outbound traffic i.e from VM to internet access i.e Adaper 2 (NAT) i.e ifcfg-eth1
 
 Login to the VM through console. 
 
-Run 'ifconfig'
+Run 'ifconfig' <br>
 You will see only the loopback network only
 
 Edit /etc/sysconfig/network-scripts/ifcfg-eth0
