@@ -13,6 +13,7 @@ You will see a new network created like below. (The IP address will vary)
       Subnet Mask . . . . . . . . . . . : 255.255.255.0
       Default Gateway . . . . . . . . . :
 
+This is the network used to access the VMs. <br>
 So all your VMs network IPs should be 192.168.56.x
 
 We will now configure the VM network for inbound and outbound traffic  
