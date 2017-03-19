@@ -3,7 +3,7 @@
 ## Provision the VMs.
 
 Example:<br>
-pxeser<br>ver <- Kickstart/pxe Server<br>
+pxeser<br>ver <- Kickstart/pxe Server
 peserver <<br>- PuppetMaster Server<br>
 peclient1 <- p<br>uppet client<br>
 
