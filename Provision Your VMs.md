@@ -1,5 +1,5 @@
 
-Please complete these articles <br>
+Please complete the following link before proceeding <br>
 https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md
 
 
