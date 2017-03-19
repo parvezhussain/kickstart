@@ -3,9 +3,9 @@
 ## Provision the VMs.
 
 Example:<br>
-pxeser<br>ver <- Kickstart/pxe Server
-peserver <<br>- PuppetMaster Server<br>
-peclient1 <- p<br>uppet client<br>
+pxeserver <- Kickstart/pxe Server <br>
+peserver <- PuppetMaster Server<br>
+peclient1 <- puppet client<br>
 
 
 Open Oracle VirtualBox(VB). Select 'New'<br>
