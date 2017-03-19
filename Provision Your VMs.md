@@ -28,7 +28,7 @@ File size: 15GB. Click 'Create'<br>
 Repeat the same for 'peserver' and 'peclient1'<br>
 
 
-## Configuring the Network
+## Setting up the Network
 
 The most important topic is to understand the Guest VM Networking. There are many different ways to configure the VMs network.
 
