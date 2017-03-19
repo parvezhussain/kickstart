@@ -29,17 +29,20 @@ Edit /etc/sysconfig/network-scripts/ifcfg-eth0
 
 Update/Add these lines:
 
-ONBOOT=yes
-BOOTPROTO=static
-IPADDR=192.168.56.10
-PEERDNS=no
+      ONBOOT=yes
+      BOOTPROTO=static
+      IPADDR=192.168.56.10
+      PEERDNS=no
 
 Edit /etc/sysconfig/network-scripts/ifcfg-eth1
 
 Update/Add these lines
-ONBOOT=yes
 
-service network restart
+      ONBOOT=yes
+
+Restart Netwoork Service
+      
+      service network restart
 
 Run 'ifconfig'
 
