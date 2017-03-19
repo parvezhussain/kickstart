@@ -1,4 +1,7 @@
 
+Please complete these articles <br>
+https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md
+
 
 ## Provision the VMs.
 
@@ -53,4 +56,7 @@ Adaptor 2<br>
 Click 'OK'<br>
 
 Repeat the same for 'peserver' and 'peclient1
+
+NEXT STEP: Installing OS on VM <br>
+https://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md
 
