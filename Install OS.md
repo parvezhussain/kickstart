@@ -10,11 +10,57 @@ We will use 2 different ways to install OS.
 
 ## OPTION A: HOWTO Configure VM to boot/install from local DVD
 
+Example: pxeserver.localhost.com <br>
+
 Select the VM from Navigation Panel. Click 'Settings' Select 'Storage' from Navigation Panel <br>
 (From middle Panel) Select 'Storage Tree' -> Controller: IDE -> Empty <br>
 (From right panel) Click on the (disk) and provide the path to CentOS-6.8-x86_64-bin-DVD1.iso that was downloaded <br>
 Click OK <br>
 Click 'Start' to start the VM. <br>
+
+
+From Navigation Panel, select 'pxeserver' and click 'Start' <br>
+Centos will start installation. <br>
+Except the below settings, select all default <br>
+- TimeZone (your local time)
+- hostname: pxeserver.localhost.com
+- Server type: minimal
+
+The pxeserver vm will automatically reboot.
+
+
+POST INSTALL Network Config
+
+Login to the VM through the console
+
+Post Linux Install:
+
+If the VM has eth1 and eth2
+Edit ifcfg-eth1, ifcfg-eth2:
+onboot=yes
+
+edit ifcfg-eth0
+IPADDR=192.168.1.1
+bootproto=static
+onboot=yes
+
+service network restart
+
+ifconfig
+
+Verify the network settings:
+Note the IP address of eth1 (host-only adapter) ex:192.168.56.101
+
+Now open putty connect to pxeserver using 192.168.56.101
+if you are successful, Congratulation!! you are able to connect to the pxe server (inbound).
+
+Now test the outbound connection.
+From pxe server, ping www.google.com
+You should see response. Congratulation!! your outbound connection is working. 
+
+
+
+
 
 
 ## OPTION B: HOWTO Configure VM to boot/install from kickstart server <br>
@@ -49,11 +95,19 @@ service dhcpd restart
 
 #### On the VM (again)
 
-Start the VM
+Start the VM <br>
+Open VirtualBox, select the VM and click 'Start'
 
 ======================================== <br>
 
 ## Install OS from local DVD
+
+Provision the VM <br>
+https://github.com/parvezhussain/kickstart/blob/master/Provision%20Your%20VMs.md
+
+Complete the Network Configuration. <br> 
+Adapter 1 - Host-only Adapter <br>
+Adapter 2 - NAT
 
     Create the VM
     From network Configuration Use OPTION 1 or 2
@@ -80,31 +134,3 @@ Server installation will start
 The pxeserver vm will automatically reboot.
 
 ========================================
-POST INSTALL Network Config
-
-Login to the VM through the console
-
-Post Linux Install:
-
-If the VM has eth1 and eth2
-Edit ifcfg-eth1, ifcfg-eth2:
-onboot=yes
-
-edit ifcfg-eth0
-IPADDR=192.168.1.1
-bootproto=static
-onboot=yes
-
-service network restart
-
-ifconfig
-
-Verify the network settings:
-Note the IP address of eth1 (host-only adapter) ex:192.168.56.101
-
-Now open putty connect to pxeserver using 192.168.56.101
-if you are successful, Congratulation!! you are able to connect to the pxe server (inbound).
-
-Now test the outbound connection.
-From pxe server, ping www.google.com
-You should see response. Congratulation!! your outbound connection is working. 
