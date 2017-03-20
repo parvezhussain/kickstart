@@ -1,3 +1,12 @@
+# THIS PAGE IS DEPRECIATED <br>
+
+Refer https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
+
+
+======================================================================================================
+
+
+
 # kickstart
 Kickstart and other files
 
