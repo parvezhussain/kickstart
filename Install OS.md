@@ -1,13 +1,12 @@
 Please complete the following before proceeding <br>
-
+----------------------------------------------------------------- <br>
 Getting The Laptop Ready <br>
 https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
 Provision Your VMs <br>
-https://github.com/parvezhussain/kickstart/blob/master/Provision%20Your%20VMs.md
-
+https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Provision%20Your%20VMs.md <br> 
 Network Setup on VMs VirtualBox <br>
-https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Setup%20Network%20Cards%20on%20VMs
-
+https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Setup%20Network%20Cards%20on%20VMs.md <br>
+----------------------------------------------------------------- <br>
 
 OS: CentOS 6.8
 
