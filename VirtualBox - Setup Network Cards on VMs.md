@@ -1,4 +1,9 @@
 
+--------------------------------------------------------------------------------------------------- <br>
+https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
+https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Provision%20Your%20VMs.md <br>
+--------------------------------------------------------------------------------------------------- <br>
+
 ## Setting up the Network
 
 The most important topic is to understand the Guest VM Networking. There are many different ways to configure the VMs network.
