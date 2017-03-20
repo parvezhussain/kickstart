@@ -53,6 +53,10 @@ Copy the files
     cd /opt/git/bind
     rsync -avxz * /etc
 
+Verify the configuration
+
+        named-checkconf
+
 Restart DNS service
 
     service named restart
@@ -64,6 +68,24 @@ Edit /etc/resolv.conf
     domain localhost.com
     nameserver 192.168.56.100
 
-test
-nslookup (any server)
+#### Test
+
+    [root@pxeserver zones]# nslookup peserver
+    Server:         192.168.56.10
+    Address:        192.168.56.10#53
+
+    Name:   peserver.localhost.com
+    Address: 192.168.56.11
+
+Congrats!! Your DNS server is Working
+
+NEXT STEP: 
+Setup Kickstart Server <br>
+https://github.com/parvezhussain/kickstart/blob/master/Setup%20Kickstart%20Server.md <br>
+Setup PuppetMaster <br>
+https://github.com/parvezhussain/kickstart/blob/master/Setup%20and%20Configure%20Puppet%20Master.md <br>
+Setup Puppet Client <br>
+https://github.com/parvezhussain/kickstart/blob/master/Setup%20and%20Configure%20Puppet%20Client.md <br>
+
+
 
