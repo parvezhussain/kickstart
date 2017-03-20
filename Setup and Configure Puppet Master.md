@@ -74,4 +74,9 @@ Restart puppetmaser service
 
      service puppetmaster restart
 
-Your Puppet Server is Ready.
+Your Puppet Server is Ready. <br>
+
+------------------------------------------------------------------------------------------------------- <br>
+NEXT STEP : Setup and Configure Puppet Client
+
+<br>
