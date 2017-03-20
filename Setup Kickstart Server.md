@@ -203,8 +203,10 @@ Your Kickstart Server is ready. <br>
 =======================================================
 
 Next Kickstart a VM. <br>
-Rrefer to the below link under section <br>
-OPTION B: Install OS on VM Using kickstart server <br>
+- peserver.localhost.com
+- peclient1.localhost.com
+
+Refer to the below link under section "OPTION B: Install OS on VM Using kickstart server" <br>
 
 https://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md
 
