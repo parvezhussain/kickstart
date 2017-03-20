@@ -51,9 +51,8 @@ You will see eth0 and eth1 network started.
 
 ##### Test Connectivity
 
-From your laptop, ssh to the server using the ipaddress 192.168.56.10. You should be able to login.
-
-After you login to the VM though putty,  ping www.google.com . You should get ping response.
+From your laptop using putty, ssh to the server using the ipaddress 192.168.56.10. You should be able to login. Your inbound traffic to the VM is working <br>
+After you login to the VM though putty,  ping www.google.com . You should get ping response. Your outbound traffic is working. <br>
 
 Congratulation!! Your VM is ready.
 
