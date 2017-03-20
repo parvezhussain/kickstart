@@ -18,8 +18,8 @@ https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-priv
 
 #############################################################
 
-ServerName:  mydns.localhost.com
-ip address;  192.168.56.100
+ServerName:  mydns.localhost.com <br>
+ip address:  192.168.56.100
 
 Install the packages
 
