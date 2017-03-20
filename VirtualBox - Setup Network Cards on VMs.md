@@ -1,4 +1,5 @@
 
+Complete the below items before proceeding <br>
 --------------------------------------------------------------------------------------------------- <br>
 https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
 https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Provision%20Your%20VMs.md <br>
