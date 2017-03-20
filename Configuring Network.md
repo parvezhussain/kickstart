@@ -8,11 +8,11 @@ https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Provisio
 Network Setup on VMs VirtualBox <br>
 https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Setup%20Network%20Cards%20on%20VMs.md <br>
 Install OS - OPTION A: Install from local DVD <br>
-ttps://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md <br>
+https://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md <br>
 
 ----------------------------------------------------------------- <br>
 
-The first step is to identify IP Address the VM should use <br>
+The first step is to identify IP Address for the VM <br>
 <br>
 On the laptop command prompt, <br>
 type 'ipconfig'<br>
@@ -29,6 +29,9 @@ You will see a new network created like below. (The IP address will vary)
 
 This is the network used to access the VMs. <br>
 So all your VMs network IPs should be 192.168.56.x
+
+Let us take IP as <br>
+192.168.56.10 <br>
 
 We will now configure the VM network for inbound and outbound traffic  
 
