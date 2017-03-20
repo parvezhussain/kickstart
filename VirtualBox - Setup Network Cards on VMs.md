@@ -11,18 +11,20 @@ The most important topic is to understand the Guest VM Networking. There are man
 
 My requirement is:
 
-- From my laptop, I should be able to ssh to the VMs
+- I should be able to ssh to the VMs from my laptop.
 - The VMs should be able to access internet.
 
 For my requirement I will choose:
 - Adapter 1 -> Host-only Adapter
 - Adapter 2 -> NAT
 
-Read this article to understand Networking on Oracle Virtualbox
-https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/
+------------------------------------------------------------- <br>
+Read this article to understand Networking on Oracle Virtualbox <br>
+https://technology.amis.nl/2014/01/27/a-short-guide-to-networking-in-virtual-box-with-oracle-linux-inside/ <br>
 
-How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest 
-http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/
+How to make virtualbox guest use its host’s internet connection and still have ssh access to the guest <br>
+http://www.mycodingpains.com/how-to-make-virtualbox-guest-use-its-hosts-internet-connection-and-still-have-ssh-access-to-the-guest/ <br>
+------------------------------------------------------------- <br>
 
 Select the the guest VM 'pxeserver'. Select 'Settings'<br>
 Select 'Network' from navigation panel.<br>
