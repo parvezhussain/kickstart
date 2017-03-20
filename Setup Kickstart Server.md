@@ -86,7 +86,7 @@ This is one part of PXE boot<br>
 
 ========================================
 
-we want to install puppet client using the kickstart server <br>
+The kickstart server should also be able to install Puppet Client <br>
 
 #### 2.  BUILD the PUPPET REPO
 
