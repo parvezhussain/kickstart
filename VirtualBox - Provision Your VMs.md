@@ -27,5 +27,5 @@ File size: 15GB. Click 'Create'<br>
 
 Repeat the same for 'peserver' and 'peclient1'<br>
 
-NEXT STEP: Setup Network cards on VMs
+NEXT STEP: Setup Network cards on VMs <br>
 https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Setup%20Network%20Cards%20on%20VMs.md
