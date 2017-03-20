@@ -68,7 +68,8 @@ Add the Lines: <br>
      }
 
 Update the MAC Address (noted from above) <br>
-Update the IP address
+Update the IP address <br>
+Update hostname <br>
 
 service dhcpd restart
 
@@ -76,38 +77,3 @@ service dhcpd restart
 Open VirtualBox, select the VM and click 'Start'
 
 ======================================== <br>
-
-## Install OS from local DVD
-
-Provision the VM <br>
-https://github.com/parvezhussain/kickstart/blob/master/Provision%20Your%20VMs.md
-
-Complete the Network Configuration. <br> 
-Adapter 1 - Host-only Adapter <br>
-Adapter 2 - NAT
-
-    Create the VM
-    From network Configuration Use OPTION 1 or 2
-    use OPTION A to boot/install from local DVD
-
-From Navigation Panel, select 'pxeserver' and click 'Start'
-Centos will start installation.
-Except the below settings, select all default
-hostname: pxeserver.localhost.com
-Server type: minimal
-
-The pxeserver vm will automatically reboot.
-
-========================================
-Install OS from Kickstart Server (Network Install)
-
-    Create the VM
-    From network Configuration Use OPTION 1 or 2
-    use HOWTO Configure VM to boot/install from kickstart server
-
-From Navigation Panel, select 'pxeserver' and click 'Start'
-DHCP will try to connect to the kickstart server.
-Server installation will start
-The pxeserver vm will automatically reboot.
-
-========================================
