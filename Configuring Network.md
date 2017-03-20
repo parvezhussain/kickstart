@@ -1,3 +1,17 @@
+
+Complete the following before proceeding <br>
+----------------------------------------------------------------- <br>
+Getting The Laptop Ready <br>
+https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
+Provision Your VMs <br>
+https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Provision%20Your%20VMs.md <br> 
+Network Setup on VMs VirtualBox <br>
+https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Setup%20Network%20Cards%20on%20VMs.md <br>
+Install OS - OPTION A: Install from local DVD <br>
+ttps://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md <br>
+
+----------------------------------------------------------------- <br>
+
 The first step is to identify IP Address the VM should use <br>
 <br>
 On the laptop command prompt, <br>
