@@ -23,7 +23,7 @@ Install Oracle VirtualBox. Choose default installation.
 
 Install 'Oracle VirtualBox Extension Pack'
 - Open 'Oracle virtualBox'
-- From Title menu, select 'preferences'
+- From Title menu, select File -> preferences
 - On the navigation panel, select 'extension'
 - On the right of dialog box, click on the blue box and provide the path to the downloaded 'Oracle VirtualBox Extension Pack' and install.
 
