@@ -204,10 +204,10 @@ Your Kickstart Server is ready. <br>
 
 Next Kickstart a VM. <br>
 - peserver.localhost.com
-https://github.com/parvezhussain/kickstart/blob/master/Setup%20and%20Configure%20Puppet%20Master.md
+<br>https://github.com/parvezhussain/kickstart/blob/master/Setup%20and%20Configure%20Puppet%20Master.md
 
 - peclient1.localhost.com
-https://github.com/parvezhussain/kickstart/blob/master/Setup%20and%20Configure%20Puppet%20Client.md
+<br> https://github.com/parvezhussain/kickstart/blob/master/Setup%20and%20Configure%20Puppet%20Client.md
 
 Refer to the below link under section "OPTION B: Install OS on VM Using kickstart server" <br>
 
