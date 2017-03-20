@@ -25,14 +25,17 @@ Install the packages
 
     yum install bind bind-utils
 
+Download Repo
+    
+    yum install git -y
     mkdir /opt/git 
     git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
 
     cd /opt/git/bind
 
 Update named.conf <br>
-perl -pi -e 's/ 192.168.1.1/192.168.56.100/g' named.conf <br>
-perl -pi -e 's/ 192.168.1/192.168.56/g' named.conf
+perl -pi -e 's/192.168.1.1/192.168.56.100/g' named.conf <br>
+perl -pi -e 's/192.168.1/192.168.56/g' named.conf
 
 Edit  /etc/named.conf and check
 
