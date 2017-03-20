@@ -30,7 +30,7 @@ You will see a new network created like below. (The IP address will vary)
 This is the network used to access the VMs. <br>
 So all your VMs network IPs should be 192.168.56.x
 
-Let us take IP as <br>
+For the pxeserver, Let us take IP as <br>
 192.168.56.10 <br>
 
 We will now configure the VM network for inbound and outbound traffic  
@@ -59,7 +59,7 @@ Update/Add these lines
       ONBOOT=yes
       PEERDNS=no
 
-Restart Netwoork Service
+Restart Network Service
       
       service network restart
 
@@ -75,5 +75,16 @@ Your inbound traffic to the VM is working <br>
 After you login to the VM though putty,  ping www.google.com . You should get ping response. <br>
 Your outbound traffic is working. <br>
 
-Congratulation!! Your VM is ready.
+Congratulation!! Your VM is ready. <br>
+
+To Setup a Kickstart server <br>
+https://github.com/parvezhussain/kickstart/blob/master/Setup%20Kickstart%20Server.md <br>
+To Setup a DNS Server <br>
+https://github.com/parvezhussain/kickstart/blob/master/Setup%20DNS%20Server.md <br>
+
+Main Page https://github.com/parvezhussain/kickstart <br>
+
+
+
+
 
