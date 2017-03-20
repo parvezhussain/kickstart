@@ -18,38 +18,47 @@ https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-priv
 
 #############################################################
 
-yum install bind bind-utils
+ServerName:  mydns.localhost.com
+ip address;  192.168.56.100
 
-mkdir /opt/git 
-git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
+Install the packages
 
-cd /opt/git/bind
+    yum install bind bind-utils
 
-Update named.conf
-perl -pi -e 's/ 192.168.1.1/<your_bindserver-ip>/g' named.conf
-perl -pi -e 's/ 192.168.1/<your_bindserver-ip_first_3_octat>/g' named.conf
+    mkdir /opt/git 
+    git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
+
+    cd /opt/git/bind
+
+Update named.conf <br>
+perl -pi -e 's/ 192.168.1.1/192.168.56.100/g' named.conf <br>
+perl -pi -e 's/ 192.168.1/192.168.56/g' named.conf
 
 Edit  /etc/named.conf and check
 
-cd /opt/git/bind/named
+cd /opt/git/bind/named <br>
 Update named.conf.local and check the file
 
-cd /opt/git/bind/named/zones
-Check the files
+cd /opt/git/bind/named/zones <br>
+Check the files <br>
+Add a few servers on the db files <br>
 
 Copy the files 
 
-Cd /opt/git/bind
-rsync -avxz * /etc
+    cd /opt/git/bind
+    rsync -avxz * /etc
 
-service named restart
+Restart DNS service
+
+    service named restart
 
 
-On the client
-Edit /etc/restolv.comf
-domain localhost.com
-nameserver <bind ip address>
+#### On the client
+Edit /etc/resolv.conf
+    
+    domain localhost.com
+    nameserver 192.168.56.100
 
 test
-nslookup <any server>
+nslookup (any server)
 
