@@ -56,16 +56,16 @@ Click OK <br>
 
 
 #### On the Kickstart Server
-Login to Kickstart server.
-Edit /etc/dhcp/dhcpd.conf
-Add the Lines:
+Login to Kickstart server. <br>
+Edit /etc/dhcp/dhcpd.conf <br>
+Add the Lines: <br>
 
-host PXEClient1 {
-     hardware ethernet 08:00:27:C1:B6:01;
-     fixed-address 192.168.1.6;
-     filename "pxelinux.0";
-     option host-name "peserver.localhost.com";
-}
+     host PXEClient1 {
+          hardware ethernet 08:00:27:C1:B6:01;
+          fixed-address 192.168.1.6;
+          filename "pxelinux.0";
+          option host-name "peserver.localhost.com";
+     }
 
 Update the MAC Address (noted from above) <br>
 Update the IP address
@@ -73,8 +73,6 @@ Update the IP address
 service dhcpd restart
 
 #### On the VM (again)
-
-On the VirtualBox, Start the VM <br>
 Open VirtualBox, select the VM and click 'Start'
 
 ======================================== <br>
