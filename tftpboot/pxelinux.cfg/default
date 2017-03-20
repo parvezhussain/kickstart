@@ -9,15 +9,15 @@ LABEL localdisk
     MENU DEFAULT
     LOCALBOOT 0
 
+LABEL CentOS_6.8_with_puppetclient
+    MENU LABEL ^CentOS 6.8 (64-bit) with PuppetClient
+    KERNEL centos/6.8/vmlinuz
+    APPEND ks=http://192.168.1.1/ks/b67_with_puppetclient.ks initrd=centos/6.8/initrd.img ramdisk_size=100000
+    
 LABEL CentOS_6.8
-    MENU LABEL ^CentOS 6.8 (64-bit) Install
+    MENU LABEL ^CentOS 6.8 (64-bit)
     KERNEL centos/6.8/vmlinuz
     APPEND ks=http://192.168.1.1/ks/b67.ks initrd=centos/6.8/initrd.img ramdisk_size=100000
-
-LABEL CentOS_6.8_nopuppet
-    MENU LABEL ^CentOS 6.8 (64-bit) No PuppetClient Install
-    KERNEL centos/6.8/vmlinuz
-    APPEND ks=http://192.168.1.1/ks/b67_nopuppet.ks initrd=centos/6.8/initrd.img ramdisk_size=100000
 
 LABEL CentOS_7.2
     MENU LABEL ^CentOS 7.2 (64-bit) Install
