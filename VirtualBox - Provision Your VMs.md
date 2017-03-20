@@ -5,10 +5,12 @@ https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20
 
 ## Provision the VMs.
 
+We will be setting up 3 VMs <br>
+
 Example:<br>
-pxeserver <- Kickstart/pxe Server <br>
-peserver <- PuppetMaster Server<br>
-peclient1 <- puppet client<br>
+pxeserver       <- Kickstart/pxe Server <br>
+peserver        <- PuppetMaster Server<br>
+peclient1       <- Puppet Client<br>
 
 
 Open Oracle VirtualBox(VB). Select 'New'<br>
