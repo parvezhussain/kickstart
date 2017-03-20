@@ -1,4 +1,4 @@
-Please complete the following before proceeding <br>
+Complete the following before proceeding <br>
 ----------------------------------------------------------------- <br>
 Getting The Laptop Ready <br>
 https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
@@ -14,7 +14,7 @@ We will use 2 different ways to install OS.
 - From Local DVD              (OPTION A)
 - From Kickstart Server       (OPTION B)
 
-## OPTION A: HOWTO Configure VM to boot/install from local DVD
+## OPTION A: Install from local DVD
 
 Example: pxeserver.localhost.com <br>
 
@@ -40,7 +40,7 @@ Configure the Network <br>
 https://github.com/parvezhussain/kickstart/blob/master/Configuring%20Network.md
 
 
-## OPTION B: HOWTO Configure VM to boot/install from kickstart server <br>
+## OPTION B: Install from kickstart server <br>
 
 #### On the VM
 
