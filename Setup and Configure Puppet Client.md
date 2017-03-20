@@ -27,7 +27,7 @@ https://github.com/parvezhussain/kickstart/blob/master/Setup%20DNS%20Server.md <
 Install the OS using Kickstart server <br>
 - OPTION B: Install OS on VM from kickstart server  <br>
 
-In the installation menu select `**`Install 6.8 with PuppetClient`**` <br>
+In the installation menu select <b>Install 6.8 with PuppetClient</b> <br>
 
 https://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md <br>
 
