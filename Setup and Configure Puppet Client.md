@@ -3,8 +3,8 @@
 
 
 
-SERVERNAME:    peclient1 with PuppetClient.localhost.com
-IP Address:    192.168.56.20 
+SERVERNAME:    peclient.localhost.com <br>
+IP Address:    192.168.56.20 <br> 
 
 
 Complete the following before proceeding <br>
