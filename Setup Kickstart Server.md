@@ -193,12 +193,13 @@ Start tftp service and start on boot
     service xinetd restart
     chkconfig tftp on
 
-=======================================================
 
 Your Kickstart Server is ready. <br>
+=======================================================
 
-Now refer to the below link under section <br>
-OPTION B: Install from kickstart server <br>
+Next Kickstart a VM. <br>
+Rrefer to the below link under section <br>
+OPTION B: Install OS on VM Using kickstart server <br>
 
 https://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md
 
