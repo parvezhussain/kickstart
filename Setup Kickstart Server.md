@@ -195,6 +195,7 @@ Start tftp service and start on boot
 
 
 Your Kickstart Server is ready. <br>
+
 =======================================================
 
 Next Kickstart a VM. <br>
