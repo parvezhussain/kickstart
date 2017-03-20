@@ -42,14 +42,16 @@ https://github.com/parvezhussain/kickstart/blob/master/Configuring%20Network.md
 
 ## OPTION B: Install OS on VM from kickstart server <br>
 
-#### On the VM
-
 Make sure the Kickstart server is setup. <br>
-We will learn how to setup Kickstart server in the later part of this document <br> <br>
+https://github.com/parvezhussain/kickstart/blob/master/Setup%20Kickstart%20Server.md <br> <br>
+
+#### On the VM
+Open VirtualBox <br>
 Select the VM from Navigation Panel. Click 'Settings' <br>
 Select 'System' from Navigation Panel <br>
 Under Motherboard -> Boot Order, checkbox Network and move it to the TOP of the list <br>
 Select 'Network'. Under 'Adapter1 Setting' expand 'Advanced'. Note the MAC address. <br>
+This MAC address will be used on DHCP server for kickstart <br>
 Click OK <br>
 
 
@@ -72,7 +74,7 @@ service dhcpd restart
 
 #### On the VM (again)
 
-Start the VM <br>
+On the VirtualBox, Start the VM <br>
 Open VirtualBox, select the VM and click 'Start'
 
 ======================================== <br>
