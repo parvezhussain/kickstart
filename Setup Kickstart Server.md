@@ -119,7 +119,7 @@ Create the Puppet Client Repo
     ls -l puppetlabs/repodata
     -rw-r--r--. 1 root root  2986 Nov 20 10:08 repomd.xml
 
-Congratulation!! You ust learned how to create a yum repo <br>
+Congratulation!! You just learned how to create a yum repo <br>
 
 ========================================
 
@@ -189,7 +189,7 @@ This completes your DHCP Server <br>
 Edit <br>
 /var/lib/tftpboot/pxelinux.cfg/default <br>
 /var/www/html/ks/b67.ks <br>
-/var/www/html/ks/b67_nopuppet.ks <br>
+/var/www/html/ks/b67_with_puppetclient.ks <br>
 Update the IP address of the kickstart server and make sure all the paths are correct and accessible.<br>
 
 Start tftp service and start on boot
