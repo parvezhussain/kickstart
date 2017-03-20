@@ -47,6 +47,8 @@ Download kickstart Repo
     ln -s 6.8 6
     cd /var/www/html/centos/6.8
 
+Download the full CentOS 6.8 packages
+
     wget -r -nH -nc --cut-dirs=4 --no-parent --reject="index.html*" http://mirror.centos.org/centos/6.8/os/x86_64/
 
 Under /var/www/html/centos/6.8, you should see the same files as http://mirror.centos.org/centos/6.8/os/x86_64/
@@ -83,6 +85,8 @@ CONGRATULATION!! your web file server is working.<br>
 This is one part of PXE boot<br>
 
 ========================================
+
+we want to install puppet client using the kickstart server <br>
 
 #### 2.  BUILD the PUPPET REPO
 
