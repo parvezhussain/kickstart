@@ -14,7 +14,7 @@ We will use 2 different ways to install OS.
 - From Local DVD              (OPTION A)
 - From Kickstart Server       (OPTION B)
 
-## OPTION A: Install from local DVD
+## OPTION A: Install OS on VM from local DVD
 
 Example: pxeserver.localhost.com <br>
 
@@ -40,7 +40,7 @@ Configure the Network <br>
 https://github.com/parvezhussain/kickstart/blob/master/Configuring%20Network.md
 
 
-## OPTION B: Install from kickstart server <br>
+## OPTION B: Install OS on VM from kickstart server <br>
 
 #### On the VM
 
