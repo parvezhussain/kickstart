@@ -1,12 +1,19 @@
-Please complete the following article before proceeding <br>
+Please complete the following before proceeding <br>
+
+Getting The Laptop Ready <br>
 https://github.com/parvezhussain/kickstart/blob/master/Getting%20The%20Laptop%20Ready.md <br>
+Provision Your VMs <br>
 https://github.com/parvezhussain/kickstart/blob/master/Provision%20Your%20VMs.md
+
+Network Setup on VMs VirtualBox <br>
+https://github.com/parvezhussain/kickstart/blob/master/VirtualBox%20-%20Setup%20Network%20Cards%20on%20VMs
+
 
 OS: CentOS 6.8
 
 We will use 2 different ways to install OS.
-- From Local DVD
-- From Kickstart Server
+- From Local DVD              (OPTION A)
+- From Kickstart Server       (OPTION B)
 
 ## OPTION A: HOWTO Configure VM to boot/install from local DVD
 
@@ -28,39 +35,10 @@ Except the below settings, select all default <br>
 
 The pxeserver vm will automatically reboot.
 
+POST INSTALL <br>
 
-POST INSTALL Network Config
-
-Login to the VM through the console
-
-Post Linux Install:
-
-If the VM has eth1 and eth2
-Edit ifcfg-eth1, ifcfg-eth2:
-onboot=yes
-
-edit ifcfg-eth0
-IPADDR=192.168.1.1
-bootproto=static
-onboot=yes
-
-service network restart
-
-ifconfig
-
-Verify the network settings:
-Note the IP address of eth1 (host-only adapter) ex:192.168.56.101
-
-Now open putty connect to pxeserver using 192.168.56.101
-if you are successful, Congratulation!! you are able to connect to the pxe server (inbound).
-
-Now test the outbound connection.
-From pxe server, ping www.google.com
-You should see response. Congratulation!! your outbound connection is working. 
-
-
-
-
+Configure the Network <br>
+https://github.com/parvezhussain/kickstart/blob/master/Configuring%20Network.md
 
 
 ## OPTION B: HOWTO Configure VM to boot/install from kickstart server <br>
