@@ -79,7 +79,7 @@ Edit /etc/resolv.conf
 
 Congrats!! Your DNS server is Working
 
-NEXT STEP: 
+#### NEXT STEP: 
 Setup Kickstart Server <br>
 https://github.com/parvezhussain/kickstart/blob/master/Setup%20Kickstart%20Server.md <br>
 Setup PuppetMaster <br>
