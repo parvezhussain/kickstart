@@ -57,6 +57,7 @@ Edit /etc/sysconfig/network-scripts/ifcfg-eth1
 Update/Add these lines
 
       ONBOOT=yes
+      PEERDNS=no
 
 Restart Netwoork Service
       
