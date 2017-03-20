@@ -18,14 +18,16 @@ https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-priv
 
 #############################################################
 
+You can create a saperate server as DNS server or you can use the existing pxeserver or peserver to be a DNS server also. <br>
+
 ServerName:  mydns.localhost.com <br>
 ip address:  192.168.56.100
 
 Install the packages
 
-    yum install bind bind-utils
+    yum install bind bind-utils -y
 
-Download Repo
+Download the required customized files from git Repo
     
     yum install git -y
     mkdir /opt/git 
