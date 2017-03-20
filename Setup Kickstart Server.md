@@ -40,7 +40,7 @@ Download kickstart Repo
     git clone https://(your_github_id)@github.com/parvezhussain/kickstart.git /opt/git
     ls -l /opt/git
 
-##### 1.Build the Webserver
+##### 1. Build the Webserver
 
     mkdir -p /var/www/html/centos/6.8
     cd /var/www/html/centos
@@ -51,7 +51,7 @@ Download kickstart Repo
 
 Under /var/www/html/centos/6.8, you should see the same files as http://mirror.centos.org/centos/6.8/os/x86_64/
 
-Disable iptables<br>
+Disable iptables and make the changes parmanent<br>
 
     service iptables stop
     chkconfig iptables off
@@ -84,7 +84,7 @@ This is one part of PXE boot<br>
 
 ========================================
 
-### BUILD the PUPPET REPO
+#### 2.  BUILD the PUPPET REPO
 
 ### Create puppetlab client yum repo
 Download Files For PUPPET Client yum repo---
@@ -115,9 +115,11 @@ Create the Puppet Client Repo
     ls -l puppetlabs/repodata
     -rw-r--r--. 1 root root  2986 Nov 20 10:08 repomd.xml
 
+Congratulation!! You ust learned how to create a yum repo <br>
+
 ========================================
 
-#### Configure PXE Server
+#### 3. Configure PXE Server
 
 ========== Refrence Article =============== <br>
 https://wiki.centos.org/HowTos/NetworkInstallServer <br>
@@ -137,9 +139,9 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
     drwxr-xr-x. 2 root root 4096 Nov 20 07:48 puppetlabs
     
     cd /var/www/html/ks
-    perl -pi -e 's/192.168.1.1/<pxeserver ip>/g' *
+    perl -pi -e 's/192.168.1.1/192.168.56.10/g' *
     cd /var/www/html/ks/6.7
-    perl -pi -e 's/192.168.1.1/<pxeserver ip>/g' *
+    perl -pi -e 's/192.168.1.1/192.168.56.10/g' *
     
 
 
@@ -149,7 +151,7 @@ Find and replace 192.168.1.1 with the kiskstart server Ipaddress on all the file
  /var/www/html/ks/6.7/CentOS-Base.repo
  
  
-### Configure dhcp server 
+#### 4. Configure dhcp server 
 
     cd /etc/dhcp
     mv dhcpd.conf dhcpd.conf_orig
@@ -166,7 +168,7 @@ Restart dhcpd service and start on boot
 This completes your DHCP Server <br>
 
 
-### Configure tftp server<br>
+#### 5. Configure tftp server<br>
 
     cd /var/lib/tftpboot
     cp /usr/share/syslinux/pxelinux.0 .
@@ -192,3 +194,13 @@ Start tftp service and start on boot
     chkconfig tftp on
 
 =======================================================
+
+Your Kickstart Server is ready. <br>
+
+Now refer to the below link under section <br>
+OPTION B: Install from kickstart server <br>
+
+https://github.com/parvezhussain/kickstart/blob/master/Install%20OS.md
+
+
+
