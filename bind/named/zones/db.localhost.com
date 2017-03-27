@@ -10,7 +10,12 @@ $TTL	604800
 	IN 	NS	bind.localhost.com.
 
 
-bind.localhost.com.		IN	A 	192.168.56.100
-pxeserver.localhost.com.	IN	A 	192.168.56.10
-peserver.localhost.com.		IN	A 	192.168.56.11
-peclient1.localhost.com.	IN	A 	192.168.56.20
+bind.localhost.com.		IN	A 	192.168.1.100
+pxeserver.localhost.com.	IN	A 	192.168.1.10
+peserver.localhost.com.		IN	A 	192.168.1.11
+peclient1.localhost.com.	IN	A 	192.168.1.20
+peclient1.localhost.com.        IN      A       192.168.1.20
+jbccllwcic1000.localhost.com.   IN      A       192.168.1.31
+jbccllcuic1000.localhost.com.   IN      A       192.168.1.32
+jbcclltdpc1000.localhost.com.   IN      A       192.168.1.33
+jbccllkcic1000.localhost.com.   IN      A       192.168.1.34

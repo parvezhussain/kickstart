@@ -13,5 +13,9 @@ $TTL 604800
 
 100	IN	PTR	bind.localhost.com.
 10	IN      PTR     pxeserver.localhost.com.
-11	IN      PTR     peserver.localhost.com.
+11	IN      PTR     pupserver.localhost.com.
 20	IN      PTR     peclient1.localhost.com.
+31      IN      PTR     jbccllwcic1000.localhost.com.
+32      IN      PTR     jbccllcuic1000.localhost.com.
+33      IN      PTR     jbcclltdpc1000.localhost.com.
+34      IN      PTR     jbccllkcic1000.localhost.com.
