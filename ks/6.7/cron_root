@@ -1,4 +1,4 @@
 #This is Puppet cron from Kickstart
-* * * * * /usr/bin/puppet agent -tv >> /tmp/puppet.out
+* * * * * /usr/bin/puppet agent -tv &>> /tmp/puppet.out
 
 
