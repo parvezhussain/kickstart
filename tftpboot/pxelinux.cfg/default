@@ -19,7 +19,12 @@ LABEL CentOS_6.8
     KERNEL centos/6.8/vmlinuz
     APPEND ks=http://192.168.1.1/ks/b67.ks initrd=centos/6.8/initrd.img ramdisk_size=100000
 
-LABEL CentOS_7.2
-    MENU LABEL ^CentOS 7.2 (64-bit) Install
-    KERNEL centos/7.2/vmlinuz
-    APPEND ks=http://192.168.1.1/ks/b72.ks initrd=centos/7.2/initrd.img ramdisk_size=100000
+LABEL CentOS_7_with_puppetclient
+    MENU LABEL ^CentOS 7 (64-bit) with PuppetClient Install
+    KERNEL centos/7/vmlinuz
+    APPEND ks=http://192.168.1.1/ks/b7_with_puppetclient.ks initrd=centos/7/initrd.img ramdisk_size=100000
+
+LABEL CentOS_7
+    MENU LABEL ^CentOS 7 (64-bit) Install
+    KERNEL centos/7/vmlinuz
+    APPEND ks=http://192.168.1.1/ks/b7.ks initrd=centos/7/initrd.img ramdisk_size=100000
